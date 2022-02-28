@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table {
+        width: 50%;
+        border: 1px solid red;
+        border-collapse: collapse;
+        margin: 0 auto;
+      }
+      td {
+        border: 1px solid red;
+        height: 30px;
+        vertical-align: bottom;
+      }
+      /* border-spacing 边框之间的距离 
+       border-collapse 边框的合并
+    */
+    /* 默认情况下，元素在td中垂直居中，可以通过vertical-align来设置垂直对齐方式。 */
+    tr:nth-child(2n+1){background-color: aqua;}
+    /* 隔行变色 */
+    /* 如果表格中没有使用tbody，而是直接使用tr，那么浏览器会自动创建tbody，并将tr全部放到tbody中。所以tr不是table的女儿元素 */
+
+.box1{width: 200px;
+height: 200px;
+background-color: #edf;
+display: table-cell;
+vertical-align: middle;}
+.box2{width: 100px;
+height: 100px;
+background-color: #ade;
+}
+/* table-cell 单元格 td */
+    </style>
+  </head>
+  <body>
+<div class="box1">
+    <div class="box2"></div>
+</div>
+
+    <table>
+      <tr>
+        <td>学号</td>
+        <td>姓名</td>
+        <td>性别</td>
+        <td>年龄</td>
+        <td>住址</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>alpha</td>
+        <td>xx</td>
+        <td>12</td>
+        <td>earth1</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>belta</td>
+        <td>xx</td>
+        <td>13</td>
+        <td>earth2</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>lilith</td>
+        <td>xx</td>
+        <td>14</td>
+        <td>earth3</td>
+      </tr>
+    </table>
+  </body>
+</html>

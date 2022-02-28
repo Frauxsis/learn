@@ -1,0 +1,37 @@
+body {
+  background-color: rgb(226, 224, 224);
+}
+.a {
+  width: 180px;
+  height: 375px;
+  background-color: rgb(245, 189, 189);
+  font-size: 14px;
+  border-top: solid 10px rgb(244, 244, 245);
+  border-bottom: solid 10px rgb(244, 244, 245);
+  
+}
+.b {
+  height: 20px;
+ 
+  padding: 2% 4%;
+  line-height: 20px;
+  /* 要使一个文字在其母元素中垂直居中，设置其母元素的 line-height值=母元素的height值。*/
+}
+.b:hover {
+  background-color: rgb(212, 212, 212);
+}
+.c::after {
+  content: "/";
+  font-size: 12px;
+}
+
+a:link {text-decoration: none;
+  /* text-decroation:文本修饰 */
+  color: rgb(85, 84, 84);
+}
+a:visited {
+  color: initial;
+}
+a:hover {
+  color: red;
+}
