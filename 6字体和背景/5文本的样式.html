@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div.a {
+        width: 400px;
+        /* text-align: justify; */
+        text-decoration: overline green dotted;
+        /* IE不支持修改下划线颜色 样式 */
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        /* 不换行 隐藏多余内容 以省略号的形式 */
+      }
+      .b {
+        width: 300px;
+        border: 1px solid red;
+        font-size: 30px;
+      }
+      span {
+        font-size: 15px;
+        border: 2px blue solid;
+        vertical-align: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="a">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque laudantium
+      natus inventore, expedita optio rerum voluptatem, maxime aspernatur cum
+    </div>
+    <div class="b">
+      praesentium alias. Ut, eum molestiae culpa quam quas laudantium dolorum
+      fugiat!<span>trgfdvrehtgfr臭豆腐如果还通过</span>
+    </div>
+
+    <br />
+    text-align 文本水平对齐
+    <!-- left 默认值，向左对齐
+          right
+          center水平居中
+          justify 两端对齐-->
+    <br />vertical-align 垂直对齐方式
+    <!-- baseline 默认值，基线对齐 
+         top 顶部对齐
+         bottom 底部
+         middle  居中 （子元素中线与小写x对齐）
+         指定一个值，正/负
+    -->（图片对齐） <br />text-decoration 文本修饰
+    <!-- none 默认值 
+    underline 下划线 
+    line-through 删除线
+    overline 上划线
+-->
+    <br />white-space 空白：网页如何处理空白
+    <!-- normal 默认值 
+     nowrap 不换行
+     pre 保留空白
+
+-->
+    <br />text-overflow:ellopsis
+  </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .a {
+        float: left;
+        width: 200px;
+        height: 100px;
+        background-color: red;
+      }
+      .b {
+        width: 300px;
+        height: 150px;
+        background-color: green;
+        overflow: hidden;
+      }
+      .c {
+        width: 400px;
+        height: 200px;
+        background-color: #edf;
+        overflow: hidden;
+      }
+      .d {
+        width: 200px;
+        height: 100px;
+        background-color: #adf;
+        margin-top: 150px;
+      }
+    </style>
+  </head>
+  <body>
+    高度塌陷：浮动布局中常见问题<br />
+    在浮动布局中，母元素的高度默认是被女儿元素撑开的，当女儿元素浮动后，就完全脱离文档流，女儿元素脱离文档流后无法撑起母元素的高度，导致母元素的高度丢失。母元素高度丢失以后，其下的元素会自动上移，导致页面布局混乱。
+    <br />BFC：Block Formatting Context 块级格式化环境<br />BFC是CSS中的一个隐含属性，可以为一个元素开启BFC，开启BFC后，该元素会变成一个独立的布局区域。<br />
+    元素开启BFC后的特点：
+    <li>1 开启BFC的元素不会被浮动元素覆盖</li>
+    <li>2 开启BFC的元素 女儿元素和母元素的外边距不会重叠</li>
+    <li>3 开启BFC的元素可以包含浮动女儿元素</li>
+    <br />可以通过一些特殊方式开启元素的BFC
+    <li>1 设置元素的浮动（不推荐）</li>
+    <li>2 将元素设置为行内块元素（不推荐）</li>
+    <li>
+      3 将元素的overflow值设置为一个非visible的值 <br />常用
+      overflow：hidden/auto
+    </li>
+    <div class="a"></div>
+    <div class="b"></div>
+    <div class="c">
+      <div class="d"></div>
+    </div>
+  </body>
+</html>

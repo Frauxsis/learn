@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    背景： background-color：颜色
+    <br />
+    background-image: url(" ") 背景图片
+    （可以同时设置背景图片和背景颜色，背景颜色会成为图片的背景色）
+    <!-- 如果背景图片小于元素，则背景图片自动在元素中平铺，将元素铺满。
+        如果背景图片大于元素，将会有一部分背景无法完全显示。
+        如果背景图片和元素一样大，则正常显示 -->
+
+    <br />
+    background-repeat：设置背景的重复方式
+    <!-- repeat：默认值，背景沿着x，y轴方向重复至铺满
+          repeat-x：沿着x轴重复
+          repeat-y：沿着y轴重复
+          no-repeat：不重复 -->
+
+    <br />
+    background-position: 设置背景图片的位置
+    <!--  1 top,left,center,right,bottom  使用方位词时，必须要同时指定两个词，如果只一个值，第二个值默认center
+          2 偏移量 水平方向偏移量和垂直方向 正负值
+
+        -->
+
+    background-clip：裁剪 设置背景的范围
+    <!--    border-box： 默认值 背景会出现在边框的下边 
+        padding-box： 背景不会出现在边框，只会出现在内容区和内边距
+        content-box：背景只会出现在内容区
+    -->
+
+    <br />background-origin： 背景图片偏移量计算的原点
+    <!-- padding-box：默认值，background-position从内边距处开始计算 
+     content-box：背景图片的偏移量从内容区开始计算
+     border-box：背景图片的偏移量从边框开始计算
+-->
+    <br />background-size：背景图片的尺寸，
+    <!-- 第一个值是宽度，第二个值是高度。如果只有一个值，第二个默认auto 
+      cover：图片比例不变，将元素铺满
+      contain：图片比例不变，在元素中完整显示
+-->
+    <br />
+    background- attachment：背景图片是否跟随元素移动
+    <!-- scroll：默认值 背景图片跟随元素移动 
+    fixed：背景图片固定在页面中，不会随元素移动
+-->
+    <br />background 背景相关的简写属性：
+    <!-- position值写在 background-size值前面，并加斜杠
+center center/contain
+
+     origin值写在clip值前面 -->
+<br>图片属于网页的外部资源，外部资源需要浏览器单独发送请求加载。浏览器加载外部资源时，是按需加载的，用则加载
+<br>解决图片闪烁问题：可以将多个小图片保存到一个大图片中，通过调整background-position来显示相应的图片，
+这样图片会同时加载到网页中，避免闪烁出现（应用广泛，被称为雪碧图 css-sprite）
+<br>雪碧图使用步骤：
+1 确定图标 2 测量图标大小 3 根据测量结果创建元素 4 将雪碧图设置为元素的背景图片 5 设置偏移量，以显示正确的图片
+<br>
+<br>特点：一次性将多个图片加载进页面，降低请求次数 ，加快访问速度，提升用户体验
+  </body>
+</html>
