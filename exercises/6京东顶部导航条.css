@@ -87,7 +87,7 @@ div.mine {
 
 .myjingdong:hover .mytitle {
   border: 1px solid rgb(201, 186, 182);
-   border-bottom: none;
+  border-bottom: none;
   background-color: #fff;
   padding-bottom: 1px;
 }
