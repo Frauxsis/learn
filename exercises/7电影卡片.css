@@ -1,0 +1,53 @@
+div.outside {
+  width: 206px;
+  box-shadow: 0 0 10px rgb(192, 190, 190);
+}
+div.film {
+  border-bottom: 1px solid rgb(179, 178, 178);
+}
+div.info {
+  padding: 10px 16px;
+}
+img{width: 100%;}
+div.title {
+  font-size: 20px;
+  color: rgb(112, 112, 112);
+  margin: 0 -1px 10px;
+}
+
+div.catagory {
+  font-size: 16px;
+  color: rgb(167, 165, 165);
+  margin: 5px 0 10px;
+}
+div.catagory::before {
+  content: "\f3c5";
+  font-family: "FontAwesome";
+  margin-right: 6px;
+}
+div.intro {
+  font-size: 14px;
+  color: rgb(180, 180, 180);
+  margin: 18px 0;
+  line-height: 1.2;
+}
+div.score {
+  height: 30px;
+  line-height: 30px;
+  padding: 5px 20px 5px 9px;
+ color: rgb(194, 194, 194);
+  font-size: 13px;
+}
+div.star {
+  float: left;
+ 
+}
+.highlight {
+  color: #96c45b;
+}
+.facebook {
+  font-family: "FontAwesome";
+  float: right;
+  color: rgb(95, 86, 86);
+  margin-right: 15px;
+}
