@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible"
+              content="IE=edge">
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            body {
+                perspective: 800px;
+            }
+
+            /* perspective视距，人眼离网页的距离 */
+            body {
+                border: 1px black solid;
+                background-color: rgb(199, 140, 160);
+            }
+
+            .a {
+                width: 100px;
+                height: 100px;
+                background-color: rgb(92, 113, 134);
+                margin: 10px 100px;
+                transition: 2s;
+            }
+
+            body:hover .a {
+                transform: translateZ(100px);
+            }
+
+            /* 
+            transform变形：通过css来改变元素的形状或位置，不会改变页面的布局
+
+            translate 平移
+            translateX()  沿着x轴平移
+            translateY()  沿着y轴平移
+            translateZ()  沿着z轴平移 近大远小 立体效果
+                          默认情况下网页不支持透视，若需看见效果，必须设置网页的视距
+          平移数值的百分比是相对于自身进行计算的
+
+
+            
+            */
+            .b {
+                width: 200px;
+                height: 180px;
+                background-color: rgb(95, 76, 197);
+                margin: 30px 200px;
+                transition: transform 2s, box-shadow 4s;
+            }
+
+            .b:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 0 10px red;
+            }
+
+            .c {
+                background-color: rgb(197, 76, 143);
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%)translateY(-50%);
+                top: 50%;
+                /* 水平垂直居中 */
+            }
+
+            .d {
+                width: 100px;
+                height: 80px;
+                background-color: rgb(174, 114, 182);
+                margin-left: 300px;
+                transition: 2s;
+            }
+
+            body:hover .d {
+                transform: rotatez(90deg);
+            }
+
+            /* 旋转 rotate
+          rotateX()    绕x轴旋转
+          rotateY()    绕y轴旋转
+          rotateZ()    绕z轴旋转
+       */
+            /* backface-visibility 是否显示元素的背面
+          visible 默认值
+          hidden
+       
+       */
+            /*  缩放scale
+        scaleX()   水平方向缩放
+        scaleY()   垂直方向缩放
+        scale()    双方向缩放
+        scalez时要设置transform-style: preserve-3d; （不常用z轴缩放）
+        
+        */
+            .e {
+                width: 200px;
+                height: 100px;
+                background-color: rgb(116, 20, 20);
+                margin-left: 100px;
+                transition: 2s;
+            }
+
+            .e:hover {
+                transform: scaleX(0.2) scaleY(3);
+            }
+
+            .f {
+                border: 1px blue solid;
+                width: 250px;
+                height: 150px;
+                overflow: hidden;
+            }
+
+            .g {
+                width: 250px;
+                height: 150px;
+                background-color: #aff;
+                border: 1px black solid;
+            }
+
+            .g:hover {
+                transform: scale(2);
+            }
+/* transform-origin：20px 20px 变形的原点 
+    默认值 center 
+
+*/
+        </style>
+    </head>
+
+    <body>
+        <div class="a"></div>
+        <div class="b"></div>
+        <div class="c">wertyuio</div>
+        <div class="d"></div>
+        <div class="e"></div>
+        <div class="f">
+            <div class="g"></div>
+        </div>
+    </body>
+
+</html>

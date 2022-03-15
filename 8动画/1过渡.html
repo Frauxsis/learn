@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible"
+          content="IE=edge" />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
       * {
@@ -15,23 +18,65 @@
         width: 500px;
         height: 500px;
         background-color: silver;
-     overflow: hidden; 
-    }
-      .a div {
+        overflow: hidden;
+      }
+
+      .b {
         width: 100px;
         height: 100px;
-        margin-top: 100px;
-       
-
-       }
-      .b {
         background-color: #ade;
+        margin-top: 100px;
+        transition: width 2s;
+        /* 
+        transition-property: width，height，background-color... ; 
+        指定要执行过渡的属性，多个属性使用逗号隔开，所有属性用all，大部分属性都支持过渡
+        过渡时必须是一个有效值向另一个有效值进行过渡
+
+
+        transition-duration: 100ms，2s;
+        指定要执行过渡的持续时间，可以分别指定属性的持续时间
+        时间单位 s,ms（毫秒）   1s=1000ms
+
+
+        transition-timing-function: ease ;
+        过渡的时序函数，执行方式
+        可选值
+        ease         默认值 慢速开始，先加速，再减速
+        linear       匀速运动
+        ease-in      加速
+        ease-out     减速
+        ease-in-out  先加速，后减速（速度较快）
+        cubic-bezier(0,0,1,1) 贝塞尔曲线
+        https://cubic-bezier.com/
+
+        steps(3)     分几步执行过渡效果
+         可以设置第二个值
+         end 时间结束后执行
+         start 时间开始前执行
+
+
+        transition-delay: 2s; 
+        过渡效果的延迟
+        等待一段时间后再执行过渡
+
+
+        transition 简写属性
+        若有设置delay，则第一个为持续时间，第二个为延迟时间
+
+        */
       }
+
+      .a:hover .b {
+        width: 200px;
+      }
+
     </style>
   </head>
+
   <body>
     <div class="a">
       <div class="b"></div>
     </div>
   </body>
+
 </html>
