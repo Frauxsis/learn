@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>图片</title>
+  </head>
+  <body>
+    img是替换元素,src是来源，alt是描述，默认不显示，有些浏览器图片加载不能时，会显示字。搜索引擎会根据alt内容来识别图片，如：搜background会显示pic.jpeg，不写则无法识别出
+    <br />width是图片宽度，height是高度，单位是像素,如果只修改一个，另一个会等比例缩小缩放
+    <br />一般来说，pc端不修改图片大小，只裁剪需要尺寸，否则占内存或图片失真模糊
+    <br />移动端时，经常大图缩小 <br />
+    <br />
+    <br />
+    <br />
+    图片格式
+    <li>
+      jpeg（jpg）：支持颜色丰富，不支持透明效果，不支持动图，一般用来显示照片
+    </li>
+    <li>
+      gif：支持颜色较少，支持简单透明，支持动图，用来显示颜色单一的图片、动图
+    </li>
+    <li>png：支持颜色丰富，支持复杂透明，不支持动图（多用于网页）</li>
+    <li>
+      webp：谷歌推出的专用于表示网页图片，颜色丰富，支持透明，支持动图，文件小，但兼容性差
+    </li>
+    <li>
+      base64（不是图片格式）：将图片使用base64进行编码，可将图片直接转换为字符，通过字符引入图片，一般都是一些需要和网页同步加载的图片才使用base64
+      搜索图片转base64就能出字符集
+    </li>
+    <h4>效果一样用小的；效果不一样，用好的</h4>
+    <img src="../picture/pic.jpeg" alt="background" />
+    <img width="300" height="200" src="../picture/pic.jpeg" />
+    <img src="https://cdn.akamai.steamstatic.com/store/about/social-og.jpg" />
+    <span></span>
+  </body>
+</html>

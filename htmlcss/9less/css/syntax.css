@@ -1,0 +1,22 @@
+/* less中也可以写css多行注释，
+     内容会被简析到css中
+*/
+.a {
+  width: 100px;
+  color: red;
+  background-color: #ddddb5;
+}
+.a .b {
+  background-color: #e7c1c1;
+}
+.a .b .c {
+  background-color: #aad4a0;
+}
+.a .box3 {
+  height: 100px;
+  background-color: #3d5;
+}
+div {
+  width: 300px;
+  height: 300px;
+}

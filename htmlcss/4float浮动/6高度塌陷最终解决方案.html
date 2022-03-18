@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .a {
+        border: 10px solid red;
+      }
+      .b {
+        width: 200px;
+        height: 200px;
+        background-color: #cde;
+        float: left;
+      }
+      /* .c{clear: left;} */
+      .a::after {
+        content: " ";
+        display: block;
+        clear: both;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="a">
+      <div class="b"></div>
+      <!-- <div class="c"></div> 用html处理css表现不合适 -->
+    </div>
+  </body>
+</html>

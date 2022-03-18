@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>音视频</title>
+  </head>
+  <body>
+    音视频文件引入时，默认不允许用户自己控制播放停止
+    <li>controls:是否允许用户控制播放，有则能控制，无则不行</li>
+    <li>
+      autoplay:音频文件是否自动播放
+      <br />如果设置autoplay，页面打开时会自动播放，但多数浏览器不会对音乐自动播放
+    </li>
+    <li>loop是否循坏播放</li>
+    <br />source也可表示来源，可支持多个source，但只会优先出现可行的一个<br />
+    1<audio src="../audiovideo/audiopp.mp3" controls></audio>
+    <br />
+    2<audio controls>
+      （对不支持audio的浏览器打下此句：对不起，您的浏览器不支持播放音乐，请升级您的浏览器。
+      会显示此句）
+      <source src="../audiovideo/audiopp.mp3" />
+    </audio>
+    <li>
+      embed标签也可用于音频，会自动播放,必须指定width和height，得制定type的MIME（Multipurpose
+      Internet Mail Extensions）（媒体）值
+    </li>
+    <p>
+      <embed
+        src="../audiovideo/audiopp.mp3"
+        type="audio/mp3"
+        width="400"
+        height="100"
+      />
+    </p>
+    3兼容性时<audio controls>
+      <source src="../audiovideo/audiopp.mp3" />
+      <embed
+        src="../audiovideo/audiopp.mp3"
+        type="audio/mp3"
+        width="400"
+        height="100"
+      />
+    </audio>
+
+
+<br><br><br><br><br>
+
+<video controls>
+    <source src="../audiovideo/vediop.mov">
+</video>
+
+webm是谷歌推出的视频格式
+<br>source来源：1存入特定服务器，引入链接$$$$。2将视频传到视频网站，可以通过直接复制插入视频网站对应视频通用代码引入视频（iframe）
+  </body>
+</html>

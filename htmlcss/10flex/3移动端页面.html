@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible"
+              content="IE=edge">
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0">    完美视口-->
+        <!-- <meta name="viewport"
+              content="width=300px"> 
+         设置视口大小为300px 不能写死 -->
+        <meta name="wiewport"
+              content="width=device-width">
+        <title>Document</title>
+        <style>
+            .a {
+                width: 375vw;
+                height: 200px;
+                background-color: #444;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <!-- 移动端默认视口大小 980px（css像素）
+        默认情况下，移动端的像素比是 980px/移动端宽度
+        通过meta标签设置视口大小
+        
+        每一款移动设备设计时，都会有一个最佳的像素比，一般我们只需要将像素比设置为该值时，即可得到一个最佳效果
+        将像素比设置为 最佳像素比的 视口大小，称之为完美视口
+
+        不同设备的完美视口是不一样大的，所以在移动端开发时，就不能再使用像素进行布局
+        vw  表示视口宽度（viewport width）
+        100vw=1个视口的宽度
+        1vw=1%的视口宽度
+
+        vw单位总是相当于视口宽度进行计算
+
+        设计图的宽度 750px,1125px
+        100vw=750px(设计图中的像素)
+        6.4vw=48px
+
+网页中字体大小最小是12px，若设置12px以下的字体，则自动补全为12px
+
+        -->
+        <div class="a"></div>
+    </body>
+
+</html>

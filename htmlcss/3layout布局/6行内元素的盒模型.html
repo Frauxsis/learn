@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .s {
+        background-color: red;
+        display: inline-block;
+        width: 80px;
+        height: 100px;
+      }
+      .a {
+        width: 200px;
+        height: 100px;
+        background-color: #f9f;
+      }
+    </style>
+  </head>
+  <body>
+    <span class="s">this is span</span>
+    <div class="a"></div>
+    行内元素的盒模型：
+    <li>不支持设置width和height</li>
+    <li>
+      可以设置padding/border/margin，但垂直方向的padding/border/margin不会影响页面布局
+    </li>
+    <br /><br />
+    display属性：用来设置元素显示的类型
+    <li>inline：将元素设置为行内元素</li>
+    <li>block：将元素设置为块元素</li>
+    <li>
+      inline-block：将元素设置为行内块元素，可以设置width和height，且不会独占一行。但会同时具有inline和block的缺点。
+    </li>
+    <li>table：将元素设置为表格</li>
+    <li>none：元素不在页面中显示（隐藏），不占据页面位置</li>
+    <li>
+      visiblity：设置元素的显示状态
+      <ul>
+        <li>visible：默认值，元素在页面中正常显示</li>
+        <li>hidden：隐藏，不显示，但依然占据页面位置</li>
+      </ul>
+    </li>
+  </body>
+</html>

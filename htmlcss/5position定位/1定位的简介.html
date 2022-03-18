@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        body{height: 2000px;}
+      .a {
+        width: 200px;
+        height: 100px;
+        background-color: rgb(63, 223, 135);
+        position: sticky;
+        top: 80px;
+      }
+      .b {
+        width: 300px;
+        height: 150px;
+        background-color: #a1c3ef;
+        /* 相对定位
+         position: relative;
+        left: 200px;
+        top: -100px; */
+        /* 绝对定位 
+        position: absolute;
+        left: 100px;
+        top: 50px; */
+      }
+      .c {
+        width: 100px;
+        height: 200px;
+        background-color: #e618df;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="a"></div>
+    <div class="b"></div>
+    <div class="c"></div>
+    position定位是一种更加高级的布局手段，通过定位，可以将元素摆放到页面任意位置
+    <li>static：默认值，静止的，没开启定位置</li>
+    <li>relative：开启元素的相对定位</li>
+    <li>absolute：绝对定位</li>
+    <li>fixed：固定定位</li>
+    <li>sticky：粘滞定位</li>
+    <br />
+    relative 相对定位 特点：
+    <li>1元素开启相对定位后，如果不设置偏移量，元素不会发生任何变化</li>
+    <li>2相对定位是参照元素在文档流中的位置进行定位的（自己）</li>
+    <li>3相对定位会提升元素层级</li>
+    <li>4相对定位不会使元素脱离文档流</li>
+    <li>5相对定位不会改变元素性质，块还是块</li>
+    <br />offset 偏移量：元素开启position后，可以设置offset改变元素位置
+    <li>top：定位元素和定位位置上边的距离（元素往下走）垂直方向</li>
+    <li>bottom：。。。。（往上走）垂直方向（通常只需一个垂直值</li>
+    <li>left：。。。（往右，水平</li>
+    <li>right：。。。。（往左，水平，通常只需一个水平值</li>
+<br><br>absolute 绝对定位特点：top,bottom,left,right
+<li>1开启绝对定位后，如果不设置偏移量，元素的 位置 不会发生变化</li>
+<li>2开启绝对定位后，元素会从文档流中脱离</li>
+<li>3绝对定位会改变元素的性质，行内变成块，块的宽高被内容撑开</li>
+<li>4绝对定位会使元素提升层级</li>
+<li>5绝对定位元素是相对于其 包含块 进行定位的</li>
+<br>containing block 包含块：
+<li>正常情况下，包含块就是离当前元素最近的祖母 块 元素</li>
+<li>绝对定位后，包含块就是离其最近的开启定位后的祖母元素</li>
+<li>如果没有祖母元素开启定位，则根元素就是包含块（html：根元素/初始包含块）</li>
+<br>
+<br>fixed 固定定位：固定定位也是一种绝对定位，大部分特点相同于绝对定位。唯一不同的是 固定定位永远参照于浏览器的 视口（可视区域）<br>固定定位的元素不会随网页滚动而滚动
+<br>sticky 粘滞定位特点：粘滞定位特点与相对定位特点基本一致，不同点在于粘滞定位可以在元素到达某个位置时将其固定。兼容性不好
+
+
+
+
+  </body>
+</html>

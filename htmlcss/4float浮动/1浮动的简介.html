@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .a {
+        width: 150px;
+        height: 100px;
+        background-color: #aaa;
+        float: left;
+      }
+      .b {
+        width: 150px;
+        height: 100px;
+        background-color: rgb(145, 22, 22);
+        float: left;
+      }
+      .c {
+        width: 150px;
+        height: 100px;
+        background-color: rgb(11, 22, 121);
+        float: left;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="a"></div>
+    <div class="b"></div>
+    <div class="c"></div>
+    <br /><br /><br /><br /><br /><br />
+
+    用 float 属性设置元素浮动。
+    通过浮动，可以使一个元素在其母元素内部水平方向移动。
+    <li>float: none 默认值，元素不浮动</li>
+    <li>left 向左浮动</li>
+    <li>right 向右浮动</li>
+    <br />元素设置float值后，水平布局等式（7值）不需要强制成立。
+    <br />
+    元素设置浮动值后，会完全从文档流中脱离，不再占用文档流中的位置，所以该元素下方的
+    在文档流中的元素 会自动向上浮动
+    <br />
+    浮动的特点：
+    <li>元素设置浮动值后，会完全从文档流中脱离，不再占用文档流中的位置</li>
+    <li>元素设置浮动值后，会向其母元素的左侧或右侧移动</li>
+    <li>元素浮动默认不会浮出其母元素</li>
+    <li>浮动元素水平移动时，不会超过其左右浮动元素</li>
+    <li>浮动元素的上边是没有浮动的块元素，则浮动元素无法上移</li>
+    <li>浮动元素不会超过其上边的姐妹元素</li>
+    <br>浮动可以将页面中的元素水平排列，通过浮动，可以制作水平布局
+  </body>
+</html>

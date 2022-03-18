@@ -1,0 +1,493 @@
+body {
+  width: 1265px;
+  height: 2000px;
+}
+
+.clearfix::before,
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+div.topbar {
+  height: 40px;
+  background-color: #363636;
+  line-height: 40px;
+  font-size: 12px;
+  color: #5a5757;
+}
+
+div.topbar a {
+  float: left;
+  color: rgb(173, 173, 172);
+  text-decoration: none;
+  display: block;
+}
+
+div.topbar a:hover {
+  color: #fff;
+}
+
+div.menu {
+  margin: 0 20px;
+  float: left;
+}
+
+div.menu span {
+  float: left;
+  margin: 0 7px;
+  display: block;
+}
+
+div.appwrapper {
+  float: left;
+}
+
+.app {
+  position: relative;
+}
+
+.app::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border: 8px solid transparent;
+  border-top: none;
+  border-bottom-color: white;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: none;
+}
+
+.app .qrcode {
+  width: 124px;
+
+  height: 0;
+  overflow: hidden;
+  /* height: 148px; 
+  display: none;*/
+
+  background-color: rgb(255, 255, 255);
+  line-height: 1;
+  box-shadow: 0px 2px 5px rgb(168, 168, 168);
+  position: absolute;
+  left: -40px;
+  z-index: 9999999;
+  /* transition:设置样式的过渡效果 */
+  transition: height 0.5s;
+}
+
+.app:hover .qrcode,
+.app:hover::after {
+  display: block;
+  /* transition */
+  height: 148px;
+}
+
+.app .qrcode img {
+  width: 90px;
+  margin: 13px 17px 13px 17px;
+}
+
+.qrcode span {
+  color: #363636;
+  font-size: 15px;
+  padding: 0 10px;
+}
+
+div.user {
+  float: right;
+  margin: 0 20px;
+}
+
+div.user span {
+  float: left;
+  margin: 0 2px;
+}
+
+#newsinform {
+  margin: 0 25px 0 5px;
+}
+
+div.shop {
+  width: 120px;
+  float: right;
+  background-color: #464343;
+  position: relative;
+}
+
+div.shopbag a {
+  width: 90px;
+  padding: 0 0 0 20px;
+}
+
+div.shopbag i {
+  margin-right: 2px;
+}
+
+div.shoplist {
+  width: 310px;
+  height: 100px;
+  background-color: rgb(255, 255, 255);
+  display: none;
+  box-shadow: 0px 1px 4px rgb(204, 204, 204);
+  position: absolute;
+  right: 0px;
+  z-index: 999999;
+}
+
+div.shop:hover {
+  background-color: #fff;
+}
+
+div.shop:hover a,
+div.shop:hover i {
+  color: rgb(231, 166, 86);
+}
+
+div.shop:hover .shoplist {
+  display: block;
+}
+
+.shoplist span {
+  line-height: 1;
+  padding: 44px 55px 44px 59px;
+}
+
+nav.goods {
+  height: 100px;
+  line-height: 100px;
+  padding: 0 20px;
+  position: relative;
+}
+
+div.logo {
+  float: left;
+  width: 95px;
+  height: 56px;
+  padding: 22px 0;
+  /* text-indent: -9999px;
+  隐藏logo中的文字*/
+}
+
+div.logo a {
+  float: left;
+  background-image: url("./pic/logo.png");
+  background-color: transparent;
+  background-size: contain;
+  width: 56px;
+  height: 56px;
+}
+
+div.logo a:active {
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 46px;
+  height: 46px;
+  margin: 5px 0 13px 7px;
+}
+
+div.catagory {
+  float: left;
+}
+
+div.catagory .all {
+  visibility: hidden;
+}
+
+div.catagory a {
+  float: left;
+  text-decoration: none;
+  color: rgb(51, 51, 51);
+  display: block;
+}
+
+div.catagory a:hover {
+  color: rgb(236, 121, 44);
+}
+
+div.catagoryname {
+  float: left;
+  margin: 0 10px;
+}
+
+ul.catagorychildren {
+  width: 1265px;
+  height: 200px;
+  line-height: 1;
+  border-top: 1px solid rgb(202, 202, 202);
+  box-shadow: 0 2px 4px rgba(177, 169, 169, 0.144);
+  position: absolute;
+  left: 0;
+  top: 100px;
+  z-index: 999;
+  padding: 0 10px;
+  display: none;
+  background-color: #ddd;
+}
+
+ul.catagorychildren a {
+  font-size: 13px;
+}
+
+div.xiaomi:hover .xiaomilist {
+  display: block;
+}
+
+ul.catagorychildren span {
+  padding: 30px 20px;
+}
+
+ul.catagorychildren .price {
+  color: rgb(236, 121, 44);
+}
+
+ul.catagorychildren a:hover {
+  color: #464343;
+}
+
+ul.catagorychildren li {
+  float: left;
+}
+
+ul.xiaomilist img {
+  width: 80px;
+}
+
+ul.xiaomilist .xiaomilistname {
+  display: block;
+  margin: 0;
+}
+
+ul.xiaomilist .line {
+  margin: 0 10px;
+}
+
+div.search {
+  float: right;
+  position: relative;
+  margin: 24px 0;
+  height: 50px;
+  border: rgb(207, 207, 207) 1px solid;
+}
+
+div.search input {
+  float: left;
+  height: 50px;
+  color: #837c7c;
+  width: 230px;
+  padding: 0 0 0 10px;
+  border: 0;
+}
+
+/* 设置input获取焦点后的样式 */
+div.search input:focus,
+div.search input:focus + button {
+  outline: rgb(236, 121, 44) solid 1px;
+  border-left: none;
+}
+
+button.searchfont {
+  float: left;
+  width: 51px;
+  height: 50px;
+  padding: 0;
+  border: 0;
+  border-left: rgb(207, 207, 207) 1px solid;
+  background-color: #fff;
+  position: relative;
+}
+
+button.searchfont:hover {
+  background-color: rgb(236, 121, 44);
+}
+
+button.searchfont:hover i {
+  color: #fff;
+}
+
+div.search i {
+  font-size: 18px;
+  color: rgb(194, 194, 194);
+
+  position: absolute;
+  top: 17px;
+  left: 16px;
+}
+
+div.inputlist {
+  border: 1px rgb(236, 121, 44) solid;
+  width: 240px;
+  height: 240px;
+  position: absolute;
+  top: 50px;
+  left: -1px;
+  display: none;
+  background-color: white;
+  z-index: 999999;
+}
+
+div.search:hover,
+div.search:hover button.searchfont {
+  border-color: rgb(128, 126, 126);
+}
+
+div.search:hover .inputlist,
+div.search:active .inputlist {
+  display: block;
+}
+
+div.a {
+  height: 30px;
+  line-height: 30px;
+  font-size: 12px;
+  color: #464343;
+  padding-left: 18px;
+}
+
+div.a:hover {
+  background-color: rgb(241, 241, 241);
+}
+
+div.middle {
+  margin: 0 20px;
+}
+
+aside {
+  float: left;
+  width: 210px;
+
+  background-color: rgb(138, 105, 93);
+}
+
+aside a {
+  text-decoration: none;
+  font-size: 13px;
+  color: rgb(236, 236, 236);
+}
+
+aside .asidegoods {
+  padding: 10px 25px;
+  position: relative;
+}
+
+aside .asidegoods:hover {
+  background-color: rgb(255, 148, 49);
+}
+
+aside a::after {
+  content: "\f054";
+  font-family: "FontAwesome";
+  position: absolute;
+  right: 25px;
+}
+
+aside .mobile {
+  margin-top: 11px;
+}
+
+aside .life {
+  margin-bottom: 10px;
+}
+
+div.indexpicture {
+  float: left;
+  width: 1015px;
+  position: relative;
+}
+
+div.picture {
+  position: relative;
+}
+
+div.picture img {
+  width: 1015px;
+  position: absolute;
+}
+
+div.circle {
+  position: absolute;
+  top: 350px;
+  right: 40px;
+  z-index: 99999;
+}
+
+div.circle a {
+  float: right;
+  margin-left: 8px;
+  width: 5px;
+  height: 5px;
+  border: 2px solid grey;
+  border-radius: 50%;
+  background-color: rgb(112, 103, 103);
+}
+
+div.circle a:hover,
+div.circle a:active {
+  background-color: rgb(206, 204, 204);
+  border-color: #666565;
+}
+
+div.fixbar {
+  width: 26px;
+  height: 206px;
+  background-color: rgb(214, 47, 47);
+  position: fixed;
+  bottom: 50px;
+  right: 50%;
+  margin-right: -619px;
+}
+
+div.bellow {
+  margin: 0 20px;
+}
+
+table {
+  float: left;
+  background-color: rgb(138, 124, 124);
+  width: 210px;
+  height: 174px;
+  margin: 15px 0px;
+}
+
+table a {
+  display: block;
+  text-decoration: none;
+  font-size: 13px;
+  color: rgb(204, 205, 206);
+}
+
+table i {
+  font-size: 20px;
+  display: block;
+  text-align: center;
+}
+
+td {
+  vertical-align: middle;
+  height: 80px;
+  border: #928888 1px solid;
+  padding: 0 12px;
+ 
+}
+
+table a:hover {
+  color: rgb(243, 243, 243);
+}
+
+div.bellowpicture {
+  float: left;
+  margin: 15px 0 15px 15px;
+}
+
+div.bellowpicture img {
+  width: 323px;
+}
+
+div.bellowpicture .middlepicture {
+  margin: 0 10px;
+}

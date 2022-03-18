@@ -1,0 +1,42 @@
+// less中的单行注释，只能在后面写，注释中内容不会被简析到CSS中
+// 第二个less注释
+// 第三个注释
+
+/* less中也可以写css多行注释，
+     内容会被简析到css中
+*/
+
+// 变量variable：在变量中可以存储一个任意值，在需要时可以任意修改
+
+// 变量语法   @变量名:  ;
+@a: 100px;
+@b: red;
+@c: box3;
+
+// 直接使用变量时，  @变量名
+// 变量作为类名或部分使用（如url，属性名）时，必须  @{变量名}
+// 变量发生重名时，就近原则
+.a {
+    width: @a;
+    color: @b;
+    background-color: rgb(221, 221, 181);
+
+    .b {
+        background-color: rgb(231, 193, 193);
+
+        .c {
+            background-color: rgb(170, 212, 160);
+        }
+    }
+
+    .@{c} {
+        height: @a;
+        background-color: #3d5;
+    }
+}
+
+div {
+    width: 300px;
+    height: $width;
+    // $属性名   
+}

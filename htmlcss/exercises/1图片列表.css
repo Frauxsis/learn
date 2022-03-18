@@ -1,0 +1,12 @@
+body{background-color: rgb(230, 227, 227);}
+/* 注意结构顺序，方便检查 */
+.a {
+  border: 2px rgb(214, 214, 214) solid;
+  width: 200px;
+  height: 500px;
+  background-color: #ffe;
+}
+img {
+  width: 100%;
+  margin-bottom: 10px;
+}

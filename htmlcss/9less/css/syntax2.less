@@ -1,0 +1,84 @@
+.box1 {
+
+    .box2 {
+        color: red;
+    }
+
+    >.box3 {
+        color: blue;
+
+        &:hover {
+            color: green;
+        }
+    }
+
+    &:hover {
+        color: aqua;
+    }
+
+    // &符号表示外层的母元素
+
+    div & {
+        color: bisque;
+    }
+}
+
+.p1 {
+    width: 200px;
+    height: 200px;
+}
+
+// :extend()  对当前选择器扩展指定选择器的样式（选择器分组）
+.p2:extend(.p1) {
+    color: red;
+}
+
+.p3 {
+    // 直接对指定样式进行引用  括号可省
+    //  mixin 混合 
+    // .p3直接引用（复制）.p1样式
+    .p1();
+
+}
+
+//使用类选择器时，可以加后面加括号（不可省略），此时则创建了一个  mixin ，不在css中出现
+.p4() {
+    width: 200px;
+    height: 340px;
+    background-color: #edd;
+}
+
+// 通过mixin 可以设置需要的样式，并套上
+.p5 {
+    .p4
+}
+
+// mixins 混合函数
+// 在混合函数中，可以直接设置变量
+
+.test(@www, @hhh, @cccc) {
+    width: @www;
+    height: @hhh;
+    background-color: @cccc;
+}
+
+div {
+    // 调用混合函数，按顺序传递参数，参数缺一不可
+    // .test(200px, 500px, #234)
+    // 也可以 ，还可以直接在mixin中的.test中设定  .test(@www:200px,@hhh:500px){width:@www;height:@hhh;}  
+    .test(@www: 200px, @hhh: 500px, @cccc: #234)
+}
+
+span {
+    color: average(red, blue)
+}
+
+div {
+    width: 200px;
+    height: 200px;
+    background-color: #ffe;
+
+    &:hover {
+        background-color: darken(#ffe, 20%);
+    }
+}

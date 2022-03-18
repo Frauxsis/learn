@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible"
+              content="IE=edge">
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+
+            .a {
+                width: 500px;
+                height: 500px;
+                background-color: silver;
+                overflow: hidden;
+            }
+
+            .b {
+                width: 100px;
+                height: 100px;
+                background-color: #ade;
+                margin-top: 100px;
+                animation: test 2s 4;
+                /*
+       animation-name: test;  对当前元素生效的关键帧名字
+
+       animation-duration: 2s;    持续时间
+       
+       animation-delay          延迟时间
+
+       animation-timing-function  执行方式
+
+       animation-iteration-count  迭代 执行次数
+       可选值：具体次数， infinite（无限循环）
+
+       animation-direction  执行方向
+       可选值  normal    默认值     从from到to
+              reverse   相反值     从to到from
+              alternate 重复执行时反向执行，（钟摆）   从from到to
+              alternate-reverse  从to到from
+
+       animation-play-state   执行状态
+         可选值   running 默认值 动画执行
+                 paused   暂停
+
+       animation-fill-mode    填充模式
+       可选值  
+       none 默认值 执行完毕后回到不执行动画的初始位置
+       forwards  执行完毕后停止在动画结束位置
+       backwards  动画延迟等待时，元素处于开始位置
+       （delay时动画执行，而不是delay后再执行）
+       both 结合forwards和 backwards 
+       */
+                /* 
+           animation与transition类似，transition需要某个属性值发生变化，animation可以自动触发
+           
+           设置动画效果就必须要设置关键帧，关键帧设置动画执行的每一个步骤
+           @keyframes （名字）{
+               from{具体数值或百分比}
+               to{}
+           }
+           
+           */
+            }
+
+            @keyframes test {
+                from {
+                    width: 100px;
+                }
+
+                to {
+                    width: 300px;
+                }
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <div class="a">
+            <div class="b"></div>
+        </div>
+    </body>
+
+</html>

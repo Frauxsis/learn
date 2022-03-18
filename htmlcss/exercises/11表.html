@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible"
+              content="IE=edge">
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            div.clock {
+                width: 300px;
+                height: 300px;
+                background-color: rgb(200, 209, 236);
+                margin: 40px 150px;
+                border-radius: 50%;
+                position: relative;
+            }
+
+            .clock>div {
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+            }
+
+            .hour {
+                width: 100px;
+                height: 100px;
+                z-index: 999;
+            }
+
+            .h {
+                width: 10px;
+                height: 50%;
+                background-color: #9e1;
+                margin: 0 auto;
+                animation: run 43200s linear infinite;
+            }
+
+            .minute {
+                width: 150px;
+                height: 150px;
+                z-index: 99;
+                animation: run 3600s steps(60) infinite;
+            }
+
+            .m {
+                width: 7px;
+                height: 50%;
+                background-color: rgb(199, 102, 102);
+                margin: 0 auto;
+            }
+
+            .second {
+                width: 250px;
+                height: 250px;
+                z-index: 9;
+                animation: run 60s steps(60) infinite;
+            }
+
+            .s {
+                width: 4px;
+                height: 50%;
+                background-color: rgb(166, 69, 185);
+                margin: 0 auto;
+            }
+
+            @keyframes run {
+                from {
+                    transform: rotateZ(0);
+                }
+
+                to {
+                    transform: rotateZ(360deg);
+                }
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <div class="clock">
+            <div class="hour">
+                <div class="h"></div>
+            </div>
+            <div class="minute">
+                <div class="m"></div>
+            </div>
+            <div class="second">
+                <div class="s"></div>
+            </div>
+        </div>
+    </body>
+
+</html>
