@@ -1,0 +1,191 @@
+.topbar {
+    background-color: #ddf;
+    line-height: 50px;
+    box-shadow: 0 0 8px rgb(202, 202, 202);
+}
+
+
+a {
+    display: block;
+    text-decoration: none;
+    color: rgb(90, 90, 90);
+    font-size: 14px;
+}
+
+i {
+    font-family: "fontawesome";
+}
+
+@m: 15px;
+
+
+
+@media only screen and (min-width:860px) {
+
+    nav.topbar {
+        padding: 0 25px;
+
+
+
+        display: flex;
+        justify-content: space-between;
+
+
+        .leftmenu {
+            display: flex;
+            justify-content: space-around;
+
+
+            .title {
+                a {
+
+                    display: block;
+                    margin-top: 5px;
+                    margin-right: @m;
+
+
+                    img {
+
+                        height: 25px;
+
+                    }
+                }
+
+            }
+
+            .service {
+                display: flex;
+
+
+
+
+                a {
+                    margin-left: @m;
+
+                    &:hover {
+                        border-bottom: 2px solid black;
+                    }
+                }
+            }
+
+        }
+
+        .usermenu {
+            display: flex;
+
+
+            .allservice {
+                margin-right: @m;
+
+                a {
+                    i {
+                        margin-top: 10px;
+                    }
+
+                    &:hover {
+                        border-bottom: 2px solid black;
+                    }
+                }
+            }
+
+            .user {
+                display: flex;
+
+                & div {
+                    display: flex;
+                }
+
+                a {
+                    margin-left: @m;
+
+                }
+
+                .hide {
+                    content-visibility: hidden;
+                }
+            }
+
+        }
+    }
+
+}
+
+@media only screen and (max-width:860px) {
+    .topbar {
+        position: relative;
+
+    }
+
+    .title {
+        text-align: center;
+
+        img {
+            height: 23px;
+            padding-top: 12px;
+
+        }
+    }
+
+    .service {
+        // display: none;
+        position: absolute;
+
+
+
+        a {
+
+            padding-left: @m;
+            border-bottom: 1px solid rgb(216, 216, 216);
+        }
+
+    }
+
+    .allservice {
+        content-visibility: hidden;
+    }
+
+    .leftuser {
+        display: flex;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        a {
+            padding-left: @m;
+
+            .windowclose {
+                display: none;
+            }
+        }
+
+        &:hover {
+            .windowlist {
+                display: none;
+            }
+
+            .windowclose {
+                display: block;
+            }
+
+
+        }
+
+        .leftuser:hover .service {
+
+            display: block;
+
+
+        }
+    }
+
+    .rightuser {
+        display: flex;
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        a {
+            padding-right: 20px;
+        }
+    }
+}
