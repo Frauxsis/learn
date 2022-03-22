@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			var a = 543;
+			/* 数据类型是指字面量的类型
+            在js中一共有6种数据类型
+            1 String    字符串
+            2 Number    数值
+            3 Boolean   布尔值
+            4 Null      空值
+            5 Undefined 未定义
+            6 Object    对象
+
+            1-5是基本数据类型，6是引用数据类型
+            */
+
+			/* String 字符串
+            在js中，使用字符串需要添加引号
+
+     在String中，可以使用 \ 作为转义字符，当表示一些特殊符号时，可使用 \ 进行转义。
+                \"   表示一个"
+                \'   表示一个'
+                \n   换行
+                \t   制表符 相当于一个tab键
+                \\   表示一个\
+                \\\\    \\
+
+
+	       aaa = "网上：\"太\t挑\n剔\" ";
+			console.log(aaa);
+            */
+
+			/* Number 数值
+            在js中，所有数值都是Number类型 ，整数，浮点数（小数）
+                   var a=5.765;
+                   console.log(a)
+            
+            js中可以表示数字的最大值    
+             Number.MAX_VALUE      1.7976931348623157e+308
+            如果超过该值，则会返回 infinity， 正无穷大
+               -infinity  负无穷大
+
+            js中可以表示 0以上的最小值    
+             Number.MIN_VALUE        5e-324
+
+            NaN  Not A Number 一个特殊的数字
+
+            在js中，整数的运算基本可以保证精确
+            var gfd=65432+6754245
+
+            使用js进行浮点数计算，可能不精确
+            千万不要使用js进行对精确度高要求的计算，如money
+
+            */
+
+			console.log(Number.MAX_VALUE);
+			console.log(Number.MIN_VALUE);
+			/* 可以使用一个运算符 typeof 来检查一个变量的类型 
+            语法    typeof 变量名    
+            检查字符串String时，会返回string；
+            检查数值Number时，会返回number;
+            检查布尔值Boolean时，会返回boolean；
+        注意   检查空值Null时，会返回object；
+            检查未定义Undefined时，会返回undefined；
+            */
+			var bbb = 1234567890;
+			var ccc = "1234567890";
+			console.log(typeof bbb);
+			console.log(typeof ccc);
+
+			/* Boolean 布尔值  只有两个  主要用于逻辑判断
+              true    真
+              false   假
+            
+            */
+			var cde = true;
+			console.log(cde);
+
+			/* Null类型的值只有一个，就是null
+            null值专门用来表示一个空对象
+            */
+			var wsx = null;
+			console.log(typeof wsx);
+
+			/* Undefined类型的值只有一个，就是undefined
+            当声明一个变量，但不给该变量赋值时，她的值就是undefined
+            
+            */
+			var p;
+			console.log(p);
+		</script>
+	</head>
+	<body></body>
+</html>

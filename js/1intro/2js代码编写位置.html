@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<!-- 可以将js代码编写到 onclick 属性中 
+    当点击按钮时，js代码才会执行 不推荐使用。script标签。
+
+    可以将外部js文件引入script标签中，此时该script中即使有代码，浏览器自动忽略，无法执行。如果需要，当创建一个新的script标签用于编写
+    <script src=""> </script>
+    <script>alert("") </script>
+-->
+		<button onclick="alert('dont click');">ckickme</button>
+		<!-- 可以将js代码写在超链接的href属性中，当点击超链接时，会执行js代码 -->
+		<a href="javascript:alert('gone');">clicktoo</a>
+	</body>
+</html>

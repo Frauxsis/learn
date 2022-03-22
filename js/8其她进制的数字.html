@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			/* 在js中，如果需要表示 16 进制的数字，需要以 0x 开头，返回一个十进制数字
+                      如果需要表示 8 进制的数字，需要以 0 开头
+                     如果需要表示 2 进制的数字，需要以 0b 开头，兼容性不好
+            */
+			a = 0x10;
+			//    16
+			b = 0xff;
+			// 255
+			c = 070;
+			// 像"070"这种字符串，有些浏览器会当作 8进制 解析，有些会当成 十进制 解析
+			// 56
+			c = parseInt(c, 10);
+			//可以在 parseInt()中传递第二个参数来指定数字的进制
+			d = 0b10;
+			// 2
+		</script>
+	</head>
+	<body></body>
+</html>

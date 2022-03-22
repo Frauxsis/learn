@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			/* 强制类型转换 是指一个数据类型强制转换为其她数据类型
+			            类型转换主要指将其她数据类型转换为 String Number Boolean
+			            */
+
+			/* 将其她数据类型转换为String
+			            1 调用被转换数据类型的 toString(); 方法
+			                变量名.toString();
+			              该方法不会影响原变量，它会将转换的结果返回
+			              注意 null和undefined值没有toString方法，若调用，会报错。
+
+			            2 调用String()函数，并将被转换的数据作为参数传递给函数（都可以调用）
+			              对于Number和Boolean实际上就是调用的 toString() 方法，
+			              对于null和undefined值，不会调用 toString() 方法，
+			                   它会将 null 直接转化为 "null" ,
+			                      将undefined直接转换为 "undefined"
+			              */
+			var a = 765;
+			// a=false;
+			// var a = a.toString();
+			// var b = a.toString();
+			a = String(a);
+			b = String(a);
+			console.log(a);
+			console.log(typeof a);
+			console.log(b);
+			console.log(typeof b);
+
+			/* 将其她数据类型转换为 Number
+			            1 调用Number()函数
+			              String转换成Number  字符串纯数字时，则直接将其转换为数字
+			                                 字符串有非数字内容时，则转换为NaN
+			                                 字符串是空串或全是空格，则转换为0
+			              Boolean转换成Number true转成1，false转成0
+			              Null转换成Number    null转成0
+			              Undefined转换成Number  undefined转成NaN
+
+			            2 这种方式专门用来对付字符串
+			                parseInt()    把一个字符串中的有效整数内容提取出来，遇到小数点，字母就立刻停止提取
+			                parseFloat()  与paseInt()类似，但她可以提取出小数
+
+                          如果对非String使用paseInt()或parseFloat()，它会先将其转换为String，然后再操作
+                          
+
+			            */
+			var c = "4567345678989";
+			c = Number(c);
+			console.log(c);
+			console.log(typeof c);
+
+			var d = "1098.765b4px";
+			// d = parseInt(d);
+			d = parseFloat(d);
+			console.log(d);
+			console.log(typeof d);
+
+			/* 将其她数据类型转换为Boolean
+                 使用Boolean()函数
+                    Number转换成Boolean   除了0和NaN，其她都是true
+                    String转换成Boolean   除了空串，其她都是true
+                    null和undefined值都会转换成false
+                    Object转换成true
+            */
+
+			var tgb = 9876543;
+			tgb = "yhgtrf";
+			tgb = Boolean(tgb);
+			console.log(tgb);
+			console.log(typeof tgb);
+		</script>
+	</head>
+	<body></body>
+</html>
