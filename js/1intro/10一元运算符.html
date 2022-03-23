@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			/* 一元运算符  只需要一个操作数
+                对于非Number值，会先转换成Number，然后再计算
+                可以对一个其她的数据类型使用 + 来将其转换为number，原理同Number()函数
+
+                + 正号  不会对数值产生任何影响
+                - 负号  可以对数值取反
+            */
+			var a = 442;
+			a = +a;
+			a = -a;
+			a = "7654";
+			a = +a;
+			console.log("a=" + a);
+			console.log(typeof a);
+
+			var v = 53 + "2" + 6; //v=5326
+			v = 53 + +"2" + 6; //v=61
+			console.log("v=" + v);
+		</script>
+	</head>
+	<body></body>
+</html>

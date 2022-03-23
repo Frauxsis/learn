@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			/* 逻辑运算符   js中提供了三只逻辑运算符
+               ! 非  对一个值进行 非运算 ，即对一个布尔值进行取反操作
+                         true变为false；false变为true
+                   如果对一个值进行取反两次，该值不会变化（双重否定等于肯定）
+                   如果对非布尔值进行非运算，先会转换成布尔值，然后再取反。
+                   可以依据此特点，来将一个其他数据类型转换为布尔值
+                可以对任意一个数据类型取反两次，来将其转换为布尔值，原理同Boolean()函数
+
+               && 与  可以对 符号两侧 的值进行 与运算，并返回结果
+                      运算规则： 两个值都是true，返回true
+                               两个值中只要有一个false，就返回false
+                  js中的 与运算 属于短路的与运算，
+                      如果第一个值为false，则不会看第二个值
+                      如果第一个值为true，则会检查第二个值  
+
+               如果对非布尔值进行与运算，先会转换成布尔值，然后再运算，并且返回原值。
+                   如果两个值都为true，则返回后面的值，
+                   如果有一个值都为false，则返回前面false的值。
+
+               || 或  可以对 符号两侧 的值进行 或运算，并返回结果
+                    运算规则：   两个值都是false，返回false
+                               两个值中只要有一个值为true，则返回true
+                      js中的 或运算 属于短路的或运算，
+                        如果第一个值为true，则不会检查第二个值  
+                        如果第一个值为false，则会看第二个值
+                如果对非布尔值进行或运算，先会转换成布尔值，然后再运算，并且返回原值。
+                  如果第一个值都为true，则返回前面的值，
+                  如果第一个值都为false，则返回后面的值。
+            */
+			var a = true;
+			a = !a;
+			// a = !!a;
+			console.log("a=" + a);
+
+			var b = 10;
+			b = !!b;
+			console.log("b=" + b);
+			console.log(typeof b);
+
+			var c = true && true;
+			console.log("c=" + c);
+			console.log(typeof c);
+
+			// true && alert("hello world?")
+			// false && alert("hello world?");
+			var e = 1 && 2;
+			console.log("e=" + e);
+			console.log(typeof e);
+
+
+			var d = true || true;
+			console.log("d=" + d);
+			console.log(typeof d);
+		</script>
+	</head>
+	<body></body>
+</html>
