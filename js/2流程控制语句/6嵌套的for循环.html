@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			/* 通过程序，在页面中输出如下的图形：
+            1
+            *
+            **
+            ***
+            ****
+            *****
+           
+            2
+            *****
+            *****
+            *****
+            *****
+            *****
+
+            3
+            *****
+            ****
+            ***
+            **
+            *
+            */
+
+			/*  输出2
+			document.write("*****<br>");
+			document.write("*****<br>");
+			document.write("*****<br>");
+			document.write("*****<br>");
+			document.write("*****<br>"); */
+
+			//这个for循环执行几次，图形的高度就是多少，可以用来控制图形的高度
+			for (var i = 0; i < 5; i++) {
+				//在循环的内部再创建一个循环，用来控制图形的宽度
+				//目前外部的for循环每执行1次，内部的for循环就执行6次
+				for (var j = 0; j < 6; j++) {
+					document.write("*&nbsp;&nbsp;");
+				}
+				//输出换行
+				document.write("<br>");
+			}
+
+			//输出1
+			for (var n = 0; n < 5; n++) {
+				for (var k = 0; k < n + 1; k++) {
+					document.write("*&nbsp;&nbsp;");
+				}
+				document.write("<br>");
+			}
+
+			//输出3
+			for (var a = 0; a < 5; a++) {
+				for (var b = 0; b < 5 - a; b++) {
+					document.write("*&nbsp;&nbsp;");
+				}
+
+				document.write("<br>");
+			}
+		</script>
+	</head>
+	<body></body>
+</html>

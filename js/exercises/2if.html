@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			/* 从键盘输入小明的期末成绩
+							 当成绩为100时，’奖励一辆BMW‘；
+							 当成绩为【80-99】时，’奖励一台iphone15s‘；
+							 当成绩为【60-80】时，’奖励一本参考书‘；
+							 其她时，什么奖励也没有
+							 
+				 */
+			/* prompt()可以弹出一个提示框，该提示会带有一个文本框
+							用户可以在文本框中输入一段内容，该函数需要一个字符串作为参数，
+							该字符串将会作为提示框的提示文字
+							用户输入的内容将会作为函数的返回值返回，可以定义一个变量来接收内容
+				 */
+
+			//输错了值再输一遍 while循环
+			while (true) {
+				var finalExamScore = prompt("请输入小明的期末成绩：");
+				if (finalExamScore >= 0 && finalExamScore <= 100) {
+					break;
+				}
+				alert("请输入有效的分数");
+			}
+
+			if (finalExamScore > 100 || finalExamScore < 0 || isNaN(finalExamScore)) {
+				alert("输入了非法值");
+			} else {
+				if (finalExamScore == 100) {
+					alert("奖励一辆BMW");
+				} else if (finalExamScore >= 80) {
+					alert("奖励一台iphone15s");
+				} else if (finalExamScore >= 60) {
+					alert("奖励一本参考书");
+				} else {
+					alert("什么奖励也没有");
+				}
+			}
+
+			/* 大家都知道，男大当婚女大当嫁，那么女方家长要嫁女儿，当然要提出一定的条件：
+						高：180cm以上；富：1000万以上；帅：500以上；
+						如果这三个条件同时满足，则‘我一定要嫁给他’；
+						如果三个条件有为真的情况，则‘嫁吧，比上不足比下有余’；
+						如果这三个条件都不满足，则‘不嫁
+			*/
+
+			/* women trafficking
+				var height = prompt("身高多少厘米？");
+				var richness = prompt("存款多少万？");
+				var handsome = prompt("帅？");
+
+				if (height > 180 && richness > 1000 && handsome > 500) {
+					alert("我一定要嫁给他");
+				} else if (height > 180 || richness > 1000 || handsome > 500) {
+					alert("嫁吧，比上不足比下有余");
+				} else {
+					alert("不嫁");
+				} */
+
+			/* 编写程序，由键盘输入三个整数分别存入变量num1，num2，num3，
+				   对她们进行排序，并且由大到小输出
+						*/
+			//prompt()函数返回值是 String类型的
+			/* var num1 = +prompt("输入第一个整数");
+			var num2 = +prompt("输入第二个整数");
+			var num3 = +prompt("输入第三个整数");
+
+			if (num1 > num2 && num1 > num3) {
+				if (num2 > num3) {
+					alert(num1 + "," + num2 + "," + num3);
+				} else {
+					alert(num1 + "," + num3 + "," + num2);
+				}
+			} else if (num2 > num1 && num2 > num3) {
+				if (num1 > num3) {
+					alert(num2 + "," + num1 + "," + num3);
+				} else {
+					alert(num2 + "," + num3 + "," + num1);
+				}
+			} else {
+				if (num1 > num2) {
+					alert(num3 + "," + num1 + "," + num2);
+				} else {
+					alert(num3 + "," + num2 + "," + num1);
+				}
+			} */
+		</script>
+	</head>
+	<body></body>
+</html>
