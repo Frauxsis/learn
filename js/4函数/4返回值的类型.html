@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			/*  return
+
+			             break
+
+
+			     */
+
+			function fun() {
+				//alert("函数要执行了");
+				for (var i = 0; i < 5; i++) {
+					if (i == 2) {
+						//break;
+						//使用break退出当前循环
+						//continue;
+						//使用continue跳过当次循环
+						return;
+						// 使用return可以结束整个函数
+					}
+					console.log(i);
+				}
+				alert("函数执行完毕");
+			}
+			fun();
+
+			function fun2() {
+				var obj = { name: "renda" };
+				return obj;
+			}
+			var a = fun2();
+			console.log("a=" + a.name);
+
+			function fun3() {
+				// 在函数内部再声明一个函数
+				function fun4() {
+					alert("here is fun4");
+				}
+				return fun4;
+				// 将fun4函数对象作为返回值返回
+			}
+			a = fun3();
+			//console.log(a);
+			a();
+			fun3()();
+			//a(); 相当于 fun3()();
+		</script>
+	</head>
+	<body></body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			/* 作用域  指一个变量的作用的范围 
+                在js中，一共有两种作用域，
+                1 全局作用域
+                    直接编写在script标签中的代码都在全局作用域中
+                    全局作用域在页面打开时创建，在页面关闭时销毁
+                    在全局作用域中，有一个全局 对象 窗口window（代表的是一个浏览器的窗口，由浏览器创建），我们可以直接使用
+                    在全局作用域中，
+                        创建的变量都会作为 window对象 的属性保存
+                        创建的函数都会作为 window对象 的方法保存
+				全局作用域中的变量都是全局变量，在页面的任意位置都可以访问得到
+
+            */
+			var a = 90;
+			console.log(window);
+			console.log(window.a);
+			console.log(typeof window);
+			function fun() {
+				console.log("gegwqehwf");
+			}
+			fun();
+			window.fun();
+
+			/*  2 函数（局部）作用域
+					调用函数时创建函数作用域，函数执行完毕，函数作用域销毁
+					每创建一个函数就会创建一个新的函数作用域，她们之间是相互独立的
+					在函数作用域中，可以访问到全局作用域的变量
+					在全局作用域中，无法访问到函数作用域的变量
+
+					当在函数作用域中操作一个变量时，她会先在自身作用域中寻找
+						如果有，则直接使用；
+						没有则向上一级作用域中寻找直到找到全局作用域，
+						如果全局作用域中依然没有，则会报错ReferenceError
+					在函数中，要访问全局变量，可以使用 window对象
+			 		在函数作用域中，也有声明提前的特性
+					 	使用var关键字声明的变量，会在函数中所有的代码执行之前被声明
+						函数声明也会在函数中所有的代码执行之前声明
+			 			不使用var声明的变量都会成为全局变量
+					函数中的形参————变量
+			*/
+			var b = 65;
+			function fun2() {
+				var b = "fun2中的b";
+				var c = 76;
+				// console.log("b=" + b);
+				function fun3() {
+					console.log("b=" + b);
+					console.log("b=" + window.b);
+				}
+				fun3();
+			}
+
+			fun2();
+			// console.log(c);
+
+			function fun5() {
+				var b;
+				console.log(b);
+				b = 12345678909876;
+			}
+			fun5();
+
+			var h = 999;
+			function fun10() {
+				console.log(h);
+				h = 9;
+				j=6;
+			}
+			fun10();
+			console.log(h);
+			console.log(j);
+			
+		</script>
+	</head>
+	<body></body>
+</html>

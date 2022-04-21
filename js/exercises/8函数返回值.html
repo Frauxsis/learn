@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			/* 定义一个函数，判断一个数字是否为偶数，如果是则返回true，否则返回false */
+			function num(n) {
+				return n % 2 == 0;
+			}
+			var result = num(104);
+			console.log("result=" + result);
+
+			/* 定义一个函数，可以根据半径计算一个圆的面积，并返回计算结果 */
+			function area(r) {
+				return 3.1415926 * r * r;
+			}
+			var result2 = area(5);
+			console.log("result2=" + result2);
+
+			/* 创建一个函数，可以在控制台输出一个人的信息，name age gender address */
+			function info(obj) {
+				console.log(
+					"I'm " +
+						obj.name +
+						". I'm " +
+						obj.age +
+						" years old. " +
+						"I'm a " +
+						obj.sex +
+						". I live in " +
+						obj.address +
+						"."
+				);
+			}
+			var obj = {
+				name: "nancy",
+				age: 19,
+				sex: "female",
+				address: "earth",
+			};
+			info(obj);
+
+			function fun(a) {
+				console.log("a=" + a);
+				a(obj);
+			}
+			fun(info);
+
+			fun(area);
+            //函数对象，相当于直接使用函数对象
+
+			fun(area(4));
+            // 调用函数，相当于使用函数的返回值
+		</script>
+	</head>
+	<body></body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			var obj = {
+				name: "poki",
+				age: 88,
+				sex: "female",
+				sayName: function () {
+					alert(this.name);
+				},
+			};
+
+			/* 使用工厂方法创建对象
+			         通过该方法可以大批量创建对象
+			 */
+
+			function creatPerson(name, age, sex) {
+				// 创建一个新的对象
+				var obj = new Object();
+
+				// 向对象中添加属性
+				obj.name = name;
+				obj.age = age;
+				obj.sex = sex;
+				obj.sayName = function () {
+					alert(this.name);
+				};
+
+				// 将新的对象返回
+				return obj;
+			}
+			var obj2 = creatPerson("polo", 65, "female");
+
+			var obj3 = creatPerson("rena", 34, "female");
+			var obj4 = creatPerson("bobo", 12, "female");
+			console.log(obj2);
+			console.log(obj3);
+			console.log(obj4);
+			obj3.sayName();
+
+			// 创建狗的对象
+			function creatDog(name, age) {
+				var obj = new Object();
+				obj.name = name;
+				obj.age = age;
+				obj.sayHello = function () {
+					alert("汪汪");
+				};
+				return obj;
+			}
+			var dog = creatDog("wang", 5);
+			console.log(dog);
+
+            /* 使用工厂方法创建的对象，使用的构造函数都是Object,
+                所以创建的对象都是Object类型，
+                就导致无法区分出多种不同类型的对象
+            
+            
+            */
+		</script>
+	</head>
+	<body></body>
+</html>
