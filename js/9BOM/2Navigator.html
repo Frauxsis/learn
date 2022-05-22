@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			/*  Navigator   代表当前浏览器的信息，可以用来识别不同的浏览器 
+                由于历史原因，Navigator 对象中的大部分属性都已经不能识别浏览器了
+                一般我们只会使用 userAgent 来判断浏览器的信息
+                    userAgent是一个字符串，包含用来描述浏览器信息的内容，
+                    不同的浏览器会有不同的 userAgent
+                在 IE11 中，已经将微软和IE相关的标识都已经去除，
+                    所以我们基本不能通过userAgent来识别一个浏览器是否是IE了
+
+                如果通过userAgent不能判断，还可以通过一些浏览器中特有的对象，来判断浏览器的信息  
+                如  ActiveXObject
+                
+
+            */
+			var ua = navigator.userAgent;
+			// console.log(ua);
+			if (/firefox/i.test(ua)) {
+				alert("火狐浏览器");
+			} else if (/chrome/i.test(ua)) {
+				alert("谷歌浏览器");
+			} else if (/mise/i.test(ua)) {
+				alert("IE浏览器");
+				// IE 8,9,10
+			} else if ("ActiveXObject" in window) {
+				alert("IE11");
+			}
+
+			/* if (window.ActiveXObject) {
+				alert("是IE");
+				// IE 8,9,10
+			} else {
+				alert("不是IE");
+			} */
+            
+			/* 
+			if ("ActiveXObject" in window) {
+				alert("是IE");
+			} else {
+				alert("不是IE");
+			} */
+		</script>
+	</head>
+	<body></body>
+</html>

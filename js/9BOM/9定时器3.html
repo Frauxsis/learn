@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			#box1 {
+				width: 100px;
+				height: 100px;
+				background-color: #dd8;
+				position: absolute;
+				left: 0;
+			}
+			#box2 {
+				width: 100px;
+				height: 100px;
+				background-color: #acd;
+				position: absolute;
+				left: 0;
+				top: 300px;
+			}
+		</style>
+		<script src="9tools.js"></script>
+		<script>
+			window.onload = function () {
+				var box1 = document.getElementById("box1");
+				// var box2 = document.getElementById("box2");
+				var btn01 = document.getElementById("btn01");
+				var btn02 = document.getElementById("btn02");
+				var btn03 = document.getElementById("btn03");
+				var btn04 = document.getElementById("btn04");
+
+				// 点击按钮后，box1向右移动
+				btn01.onclick = function () {
+					move(box1, "left", 500, 14);
+				};
+				btn02.onclick = function () {
+					move(box1, "left", 0, 11);
+				};
+				btn03.onclick = function () {
+					move(box2, "left", 500, 24);
+				};
+				btn04.onclick = function () {
+					move(box2, "width", 500, 24, function () {
+						move(box2, "height", 350, 12, function () {
+							move(box2, "top", 0, 9, function () {
+								move(box2, "width", 100, 12, function () {});
+							});
+						});
+					});
+				};
+			};
+
+			//  目前定时器的标识由全局变量timer保存
+			// 所有正在执行的定时器都在这个变量中保存
+			// var timer;
+		</script>
+	</head>
+	<body>
+		<button id="btn01">点击按钮后，box1向右移动</button>
+		<br />
+		<button id="btn02">点击按钮后，box1向左移动</button>
+		<br /><br />
+		<button id="btn03">点击按钮后，box2向右移动</button>
+		<br /><br />
+		<button id="btn04">测试按钮</button>
+		<br /><br />
+		<div id="box1"></div>
+		<div id="box2"></div>
+		<div
+			style="
+				height: 1000px;
+				border-left: solid 1px black;
+				position: absolute;
+				left: 500px;
+				top: 0;
+			"
+		></div>
+	</body>
+</html>

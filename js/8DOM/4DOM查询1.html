@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			/* 获取元素节点
+             document.getElementById()        通过id属性获取一个元素节点对象
+             document.getElementsByTagName()  根据标签名来获取一组元素节点对象
+             document.getElementsByName()     通过name属性获取一组元素节点对象
+            */
+		   
+			window.onload = function () {
+				var btn01 = document.getElementById("btn01");
+				btn01.onclick = function () {
+					/* innerHTML 通过这个属性可以获取到元素内部的html代码
+                         对于自结束标签，这个属性没有意义 
+                        如果需要读取元素节点属性，直接使用  元素.属性名  元素.id  元素.value  元素.type 
+                        注： class属性不能采用这种方式，读取class属性时需要使用 元素.className
+                    */
+					alert(bj.innerHTML);
+				};
+
+				/* getElementsByTAgName()  根据标签名来获取一组元素节点对象
+                    这个方法会返回一个 类数组对象，所有查询到的元素都会封装到对象中  
+                    即使查询到的数组只有一个，也会封装到数组中返回
+                */
+				var lis = document.getElementsByTagName("li");
+
+				alertI(lis.length);
+
+				// 遍历数组
+				for (var i = 0; i < lis.length; i++) {
+					alert(lis[i].innerHTML);
+				}
+			};
+			/* getElementsByName()  通过name属性获取一组元素节点对象
+                document.getElementsByName()
+            */
+		</script>
+	</head>
+	<body></body>
+</html>

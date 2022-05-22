@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			.b1 {
+				width: 100px;
+				height: 100px;
+				background-color: #ade;
+			}
+			.b2 {
+				height: 200px;
+				background-color: #34e;
+			}
+		</style>
+        <script src="9tools.js"></script>
+		<script>
+			/* 通过style属性修改元素的样式，
+                    每修改一个样式，浏览器需要重新渲染一次页面，
+                    这样执行的性能较差，且不方便修改多个样式。
+
+                希望一行代码可以同时修改多个样式,
+                可以通过class属性来间接修改样式，这样只需要修改一次，即可同时修改多个样式，
+                此时浏览器只需重新渲染页面一次，性能较高，且这种方式可以使表现和行为进一步分离
+            
+            */
+			window.onload = function () {
+				var box = document.getElementById("box");
+				var btn01 = document.getElementById("btn01");
+
+				btn01.onclick = function () {
+					// 修改box的样式
+					// box.style.width = "200px";  不常用，耦合
+					// box.style.height = "200px";
+					// box.style.backgroundColor = "#1ca";
+
+					// 修改box的class属性
+					// box.className += " b2";
+					// addClass(box, "b2");
+
+					// alert(hasClass(box, "hello"));
+
+					// removeClass(box, "b1");
+
+					toggleClass(box, "b2");
+				};
+			};
+
+		
+		</script>
+	</head>
+	<body>
+		<button id="btn01">点击按钮后，修改box的样式</button>
+		<br /><br />
+		<div id="box" class="b1"></div>
+	</body>
+</html>

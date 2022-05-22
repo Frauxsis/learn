@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			/* onload 事件 会在整个页面加载完成后触发 */
+			// 为window绑定一个onload事件
+			// 该事件对应的响应函数将会在页面加载完成后执行
+			// 这样可以确保代码执行时所有的DOM对象已经加载完毕了
+			window.onload = function () {
+				var btn = document.getElementById("btn");
+
+				btn.onclick = function () {
+					alert("hello");
+				};
+			};
+		</script>
+	</head>
+	<body>
+		<button id="btn">这是个按钮</button>
+		<script>
+			/* 浏览器在加载页面时，自上而下加载，读取到一行就运行一行，
+				如果将js代码写在页面上方，在代码执行时，页面还没有加载，也就DOM对象也没加载，会导致无法获取到DOM对象
+				将js代码编写到下方，是为了可以在页面加载完毕后再执行js代码
+			*/
+
+			/* var btn = document.getElementById("btn");
+
+			btn.onclick = function () {
+				alert("hello");
+			}; */
+		</script>
+	</body>
+</html>

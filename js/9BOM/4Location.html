@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			/* Location   
+             代表当前浏览器的地址栏信息，可以用来获取地址栏信息，或操作浏览器跳转页面
+               如果直接打印 location ，则可以获取到地址栏到信息（当前页面的完整路径）
+            如果直接将location属性修改为一个完整的路径，或一个相对路径，
+            则页面会自动跳转到该路径，并且会生成相应的历史记录
+
+            assign()   用来跳转到其她页面，作用和直接修改location一样，有回退
+            reload()   用于重新加载当前页面，作用和刷新按钮一样
+                可以传递一个参数true， reload(true);  强制清空缓存刷新页面
+            replace()  可以使用一个新的页面替换当前页面，调用完毕会跳转页面
+                    不会生成历史记录，不能使用回退按钮回退
+             */
+			// alert(location);
+
+			window.onload = function () {
+				var btn = document.getElementById("btn");
+				btn.onclick = function () {
+					// location = "http://www.baidu.com";
+					// location = "3History.html";
+					// location.assign("http://www.baidu.com");
+					// location.reload();
+					location.replace("http://www.baidu.com");
+				};
+			};
+		</script>
+	</head>
+	<body>
+		<button id="btn">click me</button>
+		<br />
+		<input type="text" />
+	</body>
+</html>

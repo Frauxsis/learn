@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			#box1 {
+				width: 200px;
+				height: 200px;
+				background-color: #a7c;
+			}
+			#s1 {
+				background-color: #1df;
+			}
+		</style>
+		<script>
+			/* 事件的冒泡 Bubble	事件的向上传导
+				当后代元素上的时间被触发时，其祖母元素的相同事件也会被触发
+				在开发中，大部分情况冒泡都是有用的，如果不希望发生事件冒泡，可以通过事件对象来取消冒泡
+						可以将事件对象的 cancelBubble属性设置为true，即可取消冒泡
+							event.cancelBubble = true;
+				
+			*/
+			window.onload = function () {
+				var s1 = document.getElementById("s1");
+				s1.onclick = function (event) {
+					event = event || window.event;
+					alert("span的单击响应函数");
+
+					// 取消冒泡
+					event.cancelBubble = true;
+				};
+				var box1 = document.getElementById("box1");
+				s1.onclick = function (event) {
+					event = event || window.event;
+
+					alert("div的单击响应函数");
+					event.cancelBubble = true;
+				};
+				document.body.onclick = function () {
+					alert("body的单击响应函数");
+				};
+			};
+		</script>
+	</head>
+	<body>
+		<div id="box1">
+			this is box1
+			<span id="s1">this is span</span>
+		</div>
+	</body>
+</html>

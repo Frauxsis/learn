@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			/* Math
+			                Math和其她对象不同，不是构造函数，只是普通对象
+			                属于工具类，不用创建对象，里面封装了数学运算相关的属性和方法
+			            Math 的对象属性 如  Math.PI 圆周率
+
+			             Math 的对象方法
+			             abs(x)	返回 x 的绝对值。
+
+			            ceil(x)	返回 x，向上舍入为最接近的整数。
+			                    对一个数进行向上取整，小数位有值就自动进1
+
+			            floor(x)   返回 x，向下舍入为最接近的整数。
+			                     对一个数进行向下取整，小数位舍掉
+
+			            round(x)	将 x 舍入为最接近的整数。
+			                     对一个数四舍五入 取整
+
+			            random()	返回 0 到 1 之间的随机数。不包括0和1
+			                生成[0-x]之间的随机数    Math.round(Math.random()*x)
+			                生成[x-y]之间的随机数    Math.round(Math.random()*(y-x)+x)
+
+                        max(x, y, z, ..., n)	返回值最高的数字。  获取多个数中的最大值
+
+                        min(x, y, z, ..., n)	返回值最小的数字。  获取多个数中的最小值
+
+                        sqrt(x)	返回 x 的平方根。 开方
+
+                        pow(x, y)	返回 x 的 y 次幂值。  x的y次方
+			            */
+			console.log(Math.PI);
+
+			console.log(Math.abs(-9));
+			console.log(Math.ceil(1.1));
+			console.log(Math.floor(1.5));
+			console.log(Math.round(1.1));
+			console.log(Math.random());
+			console.log(Math.round(Math.random() * 5 + 1)); //[1,6]
+
+			var max = Math.max(10, 70, 40);
+			console.log(max);
+			var min = Math.min(10, 70, 40);
+			console.log(min);
+
+			console.log(Math.pow(2, 5));
+			console.log(Math.sqrt(2));
+		</script>
+	</head>
+	<body></body>
+</html>

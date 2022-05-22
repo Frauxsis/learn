@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			/* 元字符 Metacharacter   拥有特殊含义的字符
+					. 任意字符  除了换行和行结束符
+				在正则表达式中，使用 \ 作为转义字符
+					\.  	表示 .
+					\\		表示 \
+
+			注：使用构造函数时，由于她的参数是一个字符串，
+			 而 \ 是字符串中的转义字符，所以得使用 \\ 代替 \
+
+					\w	任意字母 数字 下划线_		
+					\W	除了字母 数字 下划线_	
+					\d	任意数字
+					\D	非数字
+					\s	空格
+					\S	非空格
+					\b	单词边界
+					\B	除了单词边界
+				/^\s*|\s*$/g    开头和结尾空格
+			*/
+
+			// 检查一个字符串中是否含有 .
+			var reg = /\./;
+			reg = new RegExp("\\\.");
+			console.log(reg);
+			reg = /\bchild\b/;
+			console.log(reg.test("hello child "));
+
+			/* 接收一个用户的输入 */
+			// var str = prompt("输入用户名：");
+			var str = "               he   llo             ";
+			// 去除字符串中 开头 的空格
+			// 使用空串替换空格
+			// str = str.replace(/^\s*/, "");
+			// console.log(str);
+
+			// 去除字符串中 结尾 的空格
+			// str = str.replace(/\s*$/, "");
+			// console.log(str);
+
+			// 去除字符串中 开头和结尾 的空格
+			str = str.replace(/^\s*|\s*$/g, "");
+			console.log(str);
+		</script>
+	</head>
+	<body></body>
+</html>

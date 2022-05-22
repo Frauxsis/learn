@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			/* 获取母节点和姐妹节点     通过具体的节点使用
+            parentNode           属性，表示当前节点的母亲节点
+            previousSibling      属性，表示当前节点的前一个姐妹节点，包括文本节点在内。
+            nextSibling          属性，表示当前节点的后一个姐妹节点，包括文本节点在内。
+        
+        */
+
+			// 定义一个函数，专门用来为指定元素绑定单击响应函数
+			// 参数 1 idStr  要绑定单击响应函数的对象的id属性值
+			// 参数 2 fun    事件的回调函数，当单击元素时，该函数会被触发
+			function myClick(idStr, fun) {
+				var btn = document.getElementById(idStr);
+				btn.onclick = fun;
+			}
+
+			/* innerText    该属性可以获取到元素内部的文本内容
+                与innerHTML类似，但会去除html标签
+            */
+
+			window.onload = function () {
+				myClick("btn07", function () {
+					var bj = document.getElementById("bj");
+					var pn = bj.parentNode;
+				});
+				myClick("btn08", function () {
+					var and = document.getElementById("android");
+					var ps = and.previousSibling;
+					var pe = and.previousElementSibling;
+					// previousElementSibling  获取前一个姐妹元素，不包括空白文本，IE8及以下不支持
+				});
+				myClick("btn10", function () {
+					var bj = document.getElementById("bj");
+					// alert(bj.innerHTML);
+					
+					// alert(bj.firstChild.nodeValue);
+				});
+			};
+		</script>
+	</head>
+	<body></body>
+</html>

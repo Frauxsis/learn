@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			/* 
+            concat()	连接两个或多个数组，并返回新的连接数组
+                        不会更改原数组
+                        还可以传新元素
+
+            join()	将数组的所有元素连接成一个字符串。
+                        将数组转换为一个字符串
+                        不会更改原数组，将转换后的字符串作为结果返回
+                        可以指定一个字符串作为参数，这个字符串将会成为数组中元素的分隔符/连接符
+                                不使用，默认 , 
+
+            reverse()	反转数组中元素的顺序。
+                        会直接修改原数组
+
+            sort()	对数组的元素进行排序。 
+                    会影响原数组
+                    默认按照Unicode编码进行排序（升序）
+                    对于纯数字的数组，排序可能出错
+                    可以指定排序规则，在sort()中添加回调函数，
+                        回调函数中需要定义两个形参
+                        浏览器会分别使用数组中的元素作为实参去调用回调函数
+                        使用哪个元素并不确定，但是肯定的是数组中a在b之前
+                    浏览器会根据回调函数的返回值来决定元素的顺序
+                    return a-b;  升序排列；
+                    return b-a;  降序排列；
+                        如果返回一个大于0的值，元素会交换位置，
+                        如果返回一个小于0的值，元素不会交换位置，
+                        如果返回一个0，元素相等，不会交换位置
+            */
+			var arr = ["anna", "bana", "cindy"];
+			var arr2 = ["enda", "finda", "gloria"];
+			var arr3 = ["hill", "idea", "jica"];
+
+			var result = arr.concat(arr2, arr3, "unity", "vicky");
+			console.log(result);
+
+			var result2 = arr.join("--%&--");
+			console.log(result2);
+			console.log(typeof result2);
+
+			arr.reverse(arr);
+			console.log(arr);
+
+			var arr4 = ["b", "k", "e", "a", "f", "x", "u"];
+			var arr5 = [9, 7, 8, 12, 2, 3];
+			arr4.sort();
+			arr5.sort(function (a, b) {
+				return a - b;
+			});
+			console.log(arr4);
+			console.log(arr5);
+		</script>
+	</head>
+	<body></body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			/* 键盘事件
+                onkeydown   按键被按下
+                    如果一直按着某个键不松手，则事件会一直触发
+                    当事件连续触发时，第一次和第二次的间隔会稍微长一点，剩余的会非常快
+                        这种设计是为了防止误操作的发生
+
+                onkeyup     按键被松开
+            键盘事件一般都会绑定给一些可以获取焦点的对象或者是document
+
+            keyCode属性   可以通过 keyCode 来获取案件的unicode编码
+                   可以用来判断哪个按键被按下
+            altKey       判断 alt键 是否被按下，如果按下返回true，否则返回false。
+            ctrlKey      判断 ctrl键 是否被按下，如果按下返回true，否则返回false。
+            shiftKey     判断 shift键 是否被按下，如果按下返回true，否则返回false。
+            */
+			window.onload = function () {
+				document.onkeydown = function (event) {
+					wvent = event || window.event;
+					// console.log(event.keyCode);
+					// 判断一个 y 是否被按下
+					// 判断 y 和 ctrl 是否同时被按下
+					if (event.keyCode == 89 && event.ctrlKey) {
+						console.log("ctrl和y被按下");
+					}
+				};
+				document.onkeyup = function () {
+					console.log("up");
+				};
+
+				/* 在文本框中输入的内容，属于 onkeydown 的默认行为
+                    如果 onkeydown 取消return false了默认行为，则输入的内容不会出现在文本框中
+                */
+
+				var input = document.getElementsByTagName("input")[0];
+				input.onkeydown = function (event) {
+					event = event || window.event;
+					if (event.keyCode >= 48 && event.keyCode <= 57) {
+						return false;
+					}
+
+					// 使文本框中不能输入数字  数字编码 48-57
+				};
+			};
+		</script>
+	</head>
+	<body>
+		<input type="text" />
+	</body>
+</html>

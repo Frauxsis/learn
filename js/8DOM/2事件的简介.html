@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<!-- <button id="btn" onclick="alert('不要点');">这是个按钮</button> 耦合，不推荐使用 -->
+
+		<button id="btn">这是个按钮</button>
+		<script>
+			/* 事件   用户和浏览器之间的交互行为 
+            如  点击按钮，鼠标移动，关闭窗口
+       
+          处理事件   可以在事件对应的属性中设置一些js代码，
+                    这样当事件触发时，这些代码会执行
+           */
+
+			//  可以为按钮的对应事件绑定处理函数的形式来相应事件
+			// 这样当事件被触发时，其对应的函数会被调用
+			var btn = document.getElementById("btn");
+
+			// 绑定一个 单击事件
+            /* 为单击事件绑定的函数称之为单机响应函数 */
+			btn.onclick = function () {
+				alert("不要点");
+			};
+			console.log(btn);
+		</script>
+	</body>
+</html>
