@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			/* 
+          实例：实例对象
+          类型：类型对象
+        
+        */
+
+			function Person(name, age) {
+				//构造函数 类型
+				this.name = name;
+				this.age = age;
+			}
+			var p = new Person("ana", 35); //根据类型创建的实例对象
+			// Person("bety", 78); 一般不这样写 因为P是大写，是构造函数
+
+			/*
+            1 undefined于null的区别
+                undefined   代表定义了未赋值
+                null   代表定义了并赋值了，但值为null
+
+            2 什么时候给变量赋值为null？
+                初始赋值，表明将要赋值为 对象
+                结束前赋值，让对象成为垃圾对象（被浏览器的垃圾回收器回收）
+            
+            3 严格区分变量类型与数据类型？不会严格区别
+                3.1 数据类型 
+                        3.1.1基本类型
+                        3.1.2对象类型
+                3.2 变量类型（变量内存值的类型）
+                        3.2.1基本类型  保存的是基本类型的数据
+                        3.2.2引用类型  保存的是地址
+            */
+
+			var a;
+			console.log(a); //undefined
+			a = null;
+			console.log(a); //null
+
+			// 起始
+			var b = null; //初始赋值为 null，表明将要赋值为 对象
+			// 确定对象就是赋值
+			b = ["hello", 75];
+			// 最后
+			b = null; //让b指向的对象成为垃圾对象（被浏览器的垃圾回收器回收）
+
+			// 将对象的内存地址保存到c中
+			var c = function () {};
+			console.log(typeof c); //function
+            // 根据c地址找到 内存 中存储的函数对象
+		</script>
+	</head>
+	<body></body>
+</html>

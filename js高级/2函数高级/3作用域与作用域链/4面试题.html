@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			/* 	//test1
+			var x = 10;
+			function fn() {
+				console.log(x);
+			}
+			function show(f) {
+				var x = 20;
+				f();
+			}
+
+			show(fn);  //10 */
+
+			//test2
+			var fn = function () {
+				console.log(fn);
+			};
+			fn(); //输出整个函数
+
+			var obj = {
+				fn2: function () {
+					console.log(this.fn2); //输出整个函数
+					console.log(fn2); //报错 这里fn2是变量
+				},
+			};
+			obj.fn2();
+		</script>
+	</head>
+	<body></body>
+</html>

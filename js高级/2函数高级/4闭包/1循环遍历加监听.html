@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			/* 
+            
+            
+            */
+
+			//点击某个按钮，提示 点击的是第几个按钮
+			window.onload = function () {
+				var btns = document.getElementsByTagName("button");
+
+				/* for (var i = 0, j = btns.length; i < j; i++) {
+					var btn = btns[i];
+
+					//将btn对应的下标/索引保存着btn上
+					btn.index = i;
+					btn.onclick = function () {
+						alert("第" + (this.index + 1) + "个");
+					};
+				} */
+
+				// 利用闭包
+				for (var i = 0, j = btns.length; i < j; i++) {
+					(function (i) {
+						var btn = btns[i];
+						btn.onclick = function () {
+							alert("第" + (i + 1) + "个");
+						};
+					})(i);
+				}
+			};
+		</script>
+	</head>
+	<body>
+		<button>test1</button>
+		<button>test2</button>
+		<button>test3</button>
+	</body>
+</html>

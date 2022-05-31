@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			/* 
+            方法一 Object构造函数模式
+                套路：先创建Object对象，再动态添加属性/方法
+                适用场景：起始时不确定对象内部数据
+                问题：语句太多
+
+            */
+			var p = new Object();
+			p.name = "ana";
+			p.age = 29;
+			p.setName = function (name) {
+				this.name = name;
+			};
+
+			p.setName("gloria");
+			console.log(p.name, p.age);
+		</script>
+	</head>
+	<body></body>
+</html>

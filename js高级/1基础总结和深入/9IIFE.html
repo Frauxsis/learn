@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			/* IIFE  Immediately-Invoked Function Expression
+                立即执行/调用函数表达式(匿名函数自调用)
+
+                作用
+                隐藏实现
+                不会污染外部（全局）命名空间
+                用来编写js模块
+
+             */
+
+			// 匿名函数调用
+			(function () {
+				var a = 3;
+				console.log(a + 3);
+			})();
+
+			var a = 4;
+			console.log(a);
+
+			(function () {
+				var a = 1;
+				function test() {
+					console.log(++a);
+				}
+				window.$ = function () {
+					// 向外暴露一个全局函数
+					return {
+						test: test,
+						// 最终将 function test 这个函数暴露了出去
+					};
+				};
+			})();
+
+			$().test();
+			// $ 是一个函数名，执行后返回的是一个对象
+		</script>
+	</head>
+	<body></body>
+</html>
