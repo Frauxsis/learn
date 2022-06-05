@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>let</title>
+		<script>
+			/*  let
+        1 作用：
+            与var类似，用于声明一个变量
+        2 特点：
+            * 在块作用域内有效
+            * 不能重复声明
+            * 不会预处理，不存在变量提升
+        3 应用：
+            循环遍历加监听
+            使用let取var是趋勢
+        
+        */
+
+			// console.log(name);
+			let name = "anna";
+			// let name = "anna";
+		</script>
+	</head>
+	<body>
+		<button>test1</button>
+		<button>test2</button>
+		<button>test3</button>
+		<script>
+			let btns = document.getElementsByTagName("button");
+		
+        for (let i = 0; i < btns.length; i++) {
+            var btn = btns[i];
+            btn.onclick=function(){
+                alert(i)
+            }
+        }
+        
+        </script>
+	</body>
+</html>

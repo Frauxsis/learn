@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			/* 
+			简化的对象写法
+				省略同名的属性值
+				省略方法的function
+				如：
+				let x = 1;
+				let y = 2;
+				let point ={
+					x,
+					y,
+					setX(x){this.x = x}
+				}
+
+			*/
+
+			let name = "anna";
+			let age = 45;
+			let obj = {
+				/* name:name,
+				age:age
+				同名的属性可以省略不写
+				*/
+				name,
+				age,
+				/* getName: function () {
+					return this.name;
+				}, 
+				可以省略函数的 function
+				*/
+				getName () {
+					return this.name;
+				},
+			};
+			console.log(obj);
+			console.log(obj.getName())
+		</script>
+	</head>
+	<body></body>
+</html>

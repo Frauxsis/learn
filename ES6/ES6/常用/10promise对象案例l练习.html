@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			// 定义获取新闻的功能函数
+			function getNews(url) {
+				let promise = new Promise((resolve, reject) => {
+					//状态：初始化
+					//执行异步任务
+					//创建xmlHttp实例对象
+					let xmlHttp = new XMLHttpRequest();
+					//绑定监听 readyState
+					xmlHttp.onreadystatechange = function () {
+						if (xmlHttp.readyState === 4) {
+							if (xmlHttp.status == 200) {
+								//请求成功
+								console.log(xmlHttp.responseText);
+								//修改状态
+								resolve(xmlHttp.responseText); //修改promise的状态为成功的状态
+							} else {
+								//请求失败
+								reject("暂时没有新闻内容");
+							}
+						}
+					};
+					//设置请求方式及url
+					xmlHttp.open("GET", url);
+					//发送
+					xmlHttp.send();
+				});
+				return promise;
+			}
+			getNews("http://localhost:3000/news?id=2")
+				.then(
+					(data) => {
+						console.log(data);
+						//  发送请求获取评论内容准备url
+						let commentsUrl = JSON.parse(data).commentsUrl;
+						let url = "http://localhost:3000" + commentsUrl;
+						//发送请求
+						return getNews(url);
+					},
+					(error) => {
+						console.log(error);
+					}
+				)
+				.then(
+					(data) => {
+						console.log(data);
+					},
+					() => {}
+				);
+		</script>
+	</head>
+	<body></body>
+</html>

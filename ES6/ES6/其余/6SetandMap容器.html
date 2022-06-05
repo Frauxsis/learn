@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			/* 
+            Set容器：  无序不可重复的多个value的集合体  []
+                Set()
+                Set(array)
+                add(value)
+                delete(value)
+                has(value)
+                clear()     true/false
+                size            //不重复的7
+            
+            Map容器：  无序的 key不重复的多个 key,value 的集合体  [[]]
+                Map()
+                Map(array)
+                set(key, value)   //添加
+                get(key)
+                delete(key)
+                has(key)
+                clear()
+                size
+            */
+
+			let set = new Set([1, 2, 4, 5, 2, 3, 6]);
+			console.log(set);
+			set.add(7);
+			console.log(set.size, set);
+			console.log(set.has(8));
+			set.clear();
+			console.log(set);
+
+            let map=new Map([['aaa','ppp'],[678,'lll']])
+            console.log(map);
+            map.set(34,'iii')
+            console.log(map);
+            map.delete(678)
+            console.log(map);
+		</script>
+	</head>
+	<body></body>
+</html>

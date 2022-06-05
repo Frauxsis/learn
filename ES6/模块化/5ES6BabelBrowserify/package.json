@@ -1,0 +1,12 @@
+{
+	"name": "es6_babel_browserify",
+	"version": "1.0.0",
+	"devDependencies": {
+		"@babel/cli": "^7.17.10",
+		"@babel/core": "^7.18.2",
+		"@babel/preset-env": "^7.18.2"
+	},
+	"dependencies": {
+		"jquery": "^1.12.4"
+	}
+}

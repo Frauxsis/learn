@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			/* 
+            1. Function.prototype.bind(obj)
+                * 作用：将两数内的thi绑定为0bj，并将函数返回
+            2. 面试题：区别bind()与call()和apply() ？
+                * 都能指定函数中所this
+                * call() / apply() 是立即调用函数
+                * bind()是将函数返回  (一般是回调函数)
+            
+            */
+
+			var obj = { name: "anna" };
+			function foo(data) {
+				console.log(this, data);
+			}
+
+			// call() apply()传入的参数形式不同
+			foo.call(obj, 22); //直接从第二个参数开始依次往后传入
+			foo.apply(obj, [90]); //第二个参数必须是数组，传入放在数组里
+
+			// bind特点：
+			// 绑定完this不会立即调用当前的函数，而是将函数返回
+			// bind传参方式同call
+			foo.bind(obj, 44)();
+			// console.log(bar);
+			// bar(); //obj
+
+			setTimeout(
+				function () {
+					console.log(this);
+				}.bind(obj),
+				200
+			);
+		</script>
+	</head>
+	<body></body>
+</html>

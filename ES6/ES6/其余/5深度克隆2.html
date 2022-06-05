@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			/* 思考
+            如何实现深度拷贝（克隆）
+            拷贝的数据里不能有对象/数组，
+                即使有对象/数组，可以继续遍历对象/数组，拿到里边每一项值，
+                一直到拿到的是基本数据类型，然后再去复制，就是深度拷贝（克隆）
+
+            */
+
+			/* 知识点储备
+            如何判断数据类型   arr --> Array   null --> Null
+            1 typeof 返回的数据类型  String, Number, Boolean, Object, Undefined, Function
+            2 Object.prototype.toString.call(obj)
+        
+            */
+
+			let result = 'abcd';
+			result = null;
+			result = [1, 8];
+			console.log(Object.prototype.toString.call(result).slice(8, -1));
+
+			//for in 循环  对象（属性名）   数组（下标）
+			let obj = { name: 'anna', age: 19 };
+			for (let i in obj) {
+				console.log(i);
+			}
+
+			let arr = [1, 3, 'abc'];
+			for (let i in arr) {
+				console.log(i);
+			}
+
+			//定义检测数据类型的功能函数
+			function checkedType(target) {
+				return Object.prototype.toString.call(target).slice(8, -1);
+			}
+			console.log(checkedType(result));
+
+			//实现深度克隆      对象/数组
+			function clone(target) {
+				//判断拷贝的数据类型
+				//初始化变量result,使其成为最终克隆的数据
+				let result,
+					targetType = checkedType(target);
+				if (targetType === 'Object') {
+					result = {};
+				} else if (targetType === 'Array') {
+					result = [];
+				} else {
+					return target;
+				}
+
+				//遍历目标数据
+				for (let i in target) {
+					//接收遍历数据结构的每一项值
+					let value = target[i];
+					//判断目标数据结构里的每一值里是否存在对象/数组
+					if (
+						checkedType(value) === 'Object' ||
+						checkedType(value) === 'Array'
+					) {
+						//对象/数组中又嵌套了对象/数组
+						//继续遍历获取到的value值
+						result[i] = clone(value);
+					} else {
+						//获取到的value值是基本数据类型或是函数
+						result[i] = value;
+					}
+				}
+				return result;
+			}
+
+			let arr3 = [1, 2, { name: 'windy', age: 80 }];
+			let arr4 = clone(arr3);
+			console.log(arr4);
+			arr4[2].name = 'angel';
+			console.log(arr3, arr4);
+
+			let obj3 = { name: 'enda', age: 56 };
+			let obj4 = clone(obj3);
+			console.log(obj4);
+			obj4.name = 'gloria';
+			console.log(obj3, obj4);
+		</script>
+	</head>
+	<body></body>
+</html>

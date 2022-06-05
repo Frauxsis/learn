@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			/* 			let str = 'abcd';
+			let str2 = str;
+			console.log(str2); //abcd
+			str2 = '';
+			console.log(str); //abcd
+
+			let bool1 = true;
+			let bool2 = bool1;
+			bool2 = false;
+			console.log(bool1); //true
+
+			let obj = { name: 'anna', age: 67 };
+			let obj1 = obj;
+			console.log(obj1);
+			obj1.name = 'doll';
+			console.log(obj.name); //doll
+
+			//拷贝数组/对象，没有生成新的数据，而是复制了一份引用
+			let arr = [1, 4, { name: 'anna', age: 67 }];
+			let arr2 = arr;
+			arr2[0] = 'abcd';
+			console.log(arr, arr2); */
+
+			/* 拷贝数据
+                基本数据类型
+                    拷贝后会生成一份新的数据，修改拷贝以后的数据不会影响原数据
+                对象/数组
+                    拷贝后不会生成新的数据，而是拷贝了引用，修改拷贝以后的数据会影响原数据
+                
+                拷贝数据的方法：
+                    1 直接复制给一个变量    //浅拷贝/克隆
+                    2 Object.assign()   //浅拷贝/克隆
+                    3 Array.prototype.concat()  //浅拷贝/克隆
+                    4 Array.prototype.slice()   //浅拷贝/克隆
+                    5 JSON.parse(JSON.stringify())      //深拷贝/深度克隆  ，拷贝的数据里不能有函数，函数处理不了
+
+                浅拷贝（数组/对象）
+                    特点：拷贝的是引用，修改拷贝以后的数据会影响原数据，使得原数据不安全
+                深拷贝/深度克隆
+                    特点：拷贝的时候生成新数据，修改拷贝以后的数据不会影响原数据
+            */
+
+			let obj = { name: 'anna' };
+			let obj2 = Object.assign(obj);
+			console.log(obj2);
+			obj2.name = 'wendy';
+			console.log(obj);
+
+			let arr = [1, 3, { name: 'anna' }];
+			let arr2 = arr.concat();
+			console.log(arr2);
+			// arr2[1] = 'a';  还是基本数据类型
+			arr2[2].name = 'aaa'; //arr[2] = name:"a"}
+			console.log(arr, arr2);
+
+			let arr3 = arr.slice();
+			arr3[2].name = 'bbb';
+			console.log(arr);
+
+			console.log('--------');
+
+			let arr4 = JSON.parse(JSON.stringify(arr)); //由字符串转换成数组
+			console.log(arr4);
+			arr4[2].name = 'ccc';
+			console.log(arr, arr4);
+		</script>
+	</head>
+	<body></body>
+</html>

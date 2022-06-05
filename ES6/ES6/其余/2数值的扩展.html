@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			/* 
+			二进制与八进制数值表示法： 二进制用  0b  ，八进制用  0o
+			Number.isFinite(i)  ：判断是否 是有限大数	是则返回true，反之false
+			Number.isNaN(i)  ：判断是否 是NaN		是则返回true，反之false
+			Number.isInteger(i)  ：判断是否 是整数		是则返回true，反之false
+			Number.parseInt(i)  ：将字符串转换为对应的数值
+			Math.trunc(i)  ：直接去除小数部分
+			
+			*/
+
+			console.log(0b1010); //10
+			console.log(0o56); //46
+
+			console.log(Number.isFinite(Infinity)); //false
+
+			console.log(Number.isNaN(NaN)); //trye
+
+			console.log(Number.isInteger(123.67)); //false
+			console.log(Number.isInteger(123.0)); //true
+
+			console.log(Number.parseInt('345ij765'));  //345
+			console.log(Number.parseInt('dq345ij765'));  //NaN
+
+			console.log(Math.trunc(123.86));  //123
+		</script>
+	</head>
+	<body></body>
+</html>
