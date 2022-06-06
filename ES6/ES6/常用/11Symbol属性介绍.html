@@ -35,27 +35,31 @@
 			//创建symbol属性值
 			let symbol = Symbol();
 			console.log(symbol);
-			let obj = { name: "anna", age: 23 };
+			let obj = { name: 'anna', age: 23 };
 			// obj.sex = "female";
-			obj[symbol] = "hello";
+			obj[symbol] = 'hello';
 			console.log(obj);
 
-            // for in, for of遍历时不会遍历 symbol属性。
-            for(let i in obj){
+			//获取Symbol声明的属性名（作为对象的key）
+			let s = Object.getOwnPropertySymbols(obj);
+			console.log(s);
+
+			let m = Reflect.ownKeys(obj);
+			console.log(m);
+
+			// for in, for of遍历时不会遍历 symbol属性。
+			/*  for(let i in obj){
                 console.log(i);
-            }
+            } */
 
-			let symbol2 = Symbol("one");
-			let symbol3 = Symbol("two");
+			let symbol2 = Symbol('one');
+			let symbol3 = Symbol('two');
 			console.log(symbol2 == symbol3); //false
-			console.log(symbol2 , symbol3); 
+			console.log(symbol2, symbol3);
 
-            //可以定义常量
-            const Person_key=Symbol("Person_key")
-            console.log(Person_key);
-
-
-
+			//可以定义常量
+			const Person_key = Symbol('Person_key');
+			console.log(Person_key);
 		</script>
 	</head>
 	<body></body>

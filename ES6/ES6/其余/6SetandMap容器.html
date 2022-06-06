@@ -32,15 +32,30 @@
 			set.add(7);
 			console.log(set.size, set);
 			console.log(set.has(8));
-			set.clear();
-			console.log(set);
+			// set.clear();
+			// console.log(set);
 
-            let map=new Map([['aaa','ppp'],[678,'lll']])
-            console.log(map);
-            map.set(34,'iii')
-            console.log(map);
-            map.delete(678)
-            console.log(map);
+			//set中对象的引用无法被释放
+			//WeakSet
+			// 不能传入非对象类型的值
+			//不可迭代（遍历）
+			//没有 forEach()
+			//没有size属性
+			let set1 = new WeakSet(),
+				obj = {};
+			set.add(obj);
+			obj = null;
+			console.log(set1);
+
+			let map = new Map([
+				['aaa', 'ppp'],
+				[678, 'lll'],
+			]);
+			console.log(map);
+			map.set(34, 'iii');
+			console.log(map);
+			map.delete(678);
+			console.log(map);
 		</script>
 	</head>
 	<body></body>

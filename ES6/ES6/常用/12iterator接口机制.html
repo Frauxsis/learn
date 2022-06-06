@@ -54,7 +54,7 @@
 				};
 			}
 			//准备一个数据
-			let arr = [1, 4, 65, "abc"];
+			let arr = [1, 4, 65, 'abc'];
 			let iteratorObj = myIterator(arr);
 			console.log(iteratorObj.next());
 			console.log(iteratorObj.next());
@@ -70,7 +70,7 @@
 				console.log(i);
 			}
 
-			let str = "abcdefg";
+			let str = 'abcdefg';
 			for (let i of str) {
 				console.log(str);
 			}
@@ -80,7 +80,7 @@
 					console.log(i);
 				}
 			}
-			fun(1, 4, 5, "abc");
+			fun(1, 4, 5, 'abc');
 
 			/* let obj = { name: "anna", age: 90 };
 			for (let i of obj) {
@@ -114,15 +114,14 @@
 				},
 			};
 
-            //使用三点运算符，解构赋值，默认去调用iterator接口
-            let arr2=[1,6]
-            let arr3=[2,3,4,5]
-            arr2=[1,...arr3,6]
-            console.log(arr2);
+			//使用三点运算符，解构赋值，默认去调用iterator接口
+			let arr2 = [1, 6];
+			let arr3 = [2, 3, 4, 5];
+			arr2 = [1, ...arr3, 6];
+			console.log(arr2);
 
-            let[a,b]=arr2
-            console.log(a,b);
-
+			let [a, b] = arr2;
+			console.log(a, b);
 		</script>
 	</head>
 	<body></body>

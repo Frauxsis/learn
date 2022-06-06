@@ -7,7 +7,7 @@
 		<title>Array扩展</title>
 		<script>
 			/* 
-            1. Array.prototype.indexof(value）：得到 值在数组中的第一个 下标
+            1. Array.prototype.indexOf(value）：得到 值在数组中的第一个 下标
             2. Array.prototype.lastIndexOf(value)：得到 值在数组中的最后一个 下标
             3. Array.prototype.forEach(function(item, index){}）：遍历数组
             4. Array.prototype.map (function(item, index){})：遍历数组返回一个新的数组，返回加工之后的值
@@ -36,11 +36,10 @@
 			});
 			console.log(arr1);
 
-         var arr2=   arr.filter(function (item, index) {
-				return item>3
+			var arr2 = arr.filter(function (item, index) {
+				return item > 3;
 			});
-            console.log(arr2);
-
+			console.log(arr2);
 		</script>
 	</head>
 	<body></body>

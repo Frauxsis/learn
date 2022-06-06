@@ -8,6 +8,7 @@
 		<script>
 			/* 
             Array.from(v)   将伪数组对象或可遍历对象转换真数组
+				还可以传第二个参数，用来对每个元素进行处理 function
             Array.of(v1,v2,v3...)    将一系列值转换为数组
             find(function(value, index, arr){return true})   找出第一个满足条件返回true的元素
             findIndex(function(value, index, arr){return true})     找出第一个满足条件返回true的元素并返回其下标
@@ -33,6 +34,24 @@
 				return item > 4;
 			});
 			console.log(result);
+
+			/* entries() 对其遍历返回 索引和具体值的数组 的遍历
+			 keys()  对其遍历返回索引的遍历
+			 values() 	对其遍历返回具体值的遍历
+			都返回一个遍历器，可以使用for of循环遍历 */
+			console.log(['a', 'b'].entries());
+			console.log(['a', 'b'].keys());
+
+			for (let [i, value] of ['a', 'b'].entries()) {
+				console.log(i, value);
+			}
+
+			let letter = ['a', 'b', 'c'];
+			let it = letter.entries();
+			console.log(it.next().value);
+			console.log(it.next().value);
+			console.log(it.next().value);
+			console.log(it.next().value);
 		</script>
 	</body>
 </html>

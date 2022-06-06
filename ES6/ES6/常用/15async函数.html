@@ -23,6 +23,9 @@
                 4 语义上更为明确，使用简单，暂时没有任何副作用和不良反应
             
             */
+			/* 基本操作 async会返回一个Promise对象  then() catch() 
+			如果async函数中有多个await，那么 then()函数 会等待所有的await指令运行完的结果，才去执行
+			*/
 
 			//async基本使用
 			async function foo() {
@@ -35,33 +38,44 @@
 			}
 
 			async function test() {
-				console.log("开始执行", new Date().toTimeString());
+				console.log('开始执行', new Date().toTimeString());
 				await foo();
-				console.log("执行完毕", new Date().toTimeString());
+				console.log('执行完毕', new Date().toTimeString());
 			}
 			test();
 
 			//async里await返回值
 			function test2() {
-				return "xxx";
+				return 'xxx';
 			}
 			async function asyncPrint() {
 				// let result = await test2();
-				let result = await Promise.resolve("promise");
+				let result = await Promise.resolve('promise');
 				console.log(result);
-				result = await Promise.reject("failed");
+				result = await Promise.reject('failed');
 				console.log(result);
 			}
 			asyncPrint();
 
 			//
 
+			async function f2() {
+				//throw new Error('出错了');
+				try {
+					await Promise.reject('出错了');
+				} catch (error) {}
+				return await Promise.resolve('hello');
+			}
+			f2()
+				.then((data) => console.log(data))
+				.catch((err) => console.log(err));
+
 			//
 			//获取新闻信息
 			async function getNews(url) {
 				return new Promise((resolve, reject) => {
 					$.ajax({
-						method: "GET",
+						method: 'GET',
 						url,
 						success: (data) => resolve(data),
 						error: (error) => resolve(false),
@@ -70,13 +84,13 @@
 			}
 
 			async function sendXml() {
-				let result = await getNews("http://localhost:3000/news?id=4");
+				let result = await getNews('http://localhost:3000/news?id=4');
 				console.log(result);
 				if (!result) {
-					alert("暂时没有新闻");
+					alert('暂时没有新闻');
 					return;
 				}
-				result = await getNews("http://localhost:3000" + result.commentsUrl);
+				result = await getNews('http://localhost:3000' + result.commentsUrl);
 				console.log(result);
 			}
 			sendXml();
