@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>class</title>
+	</head>
+	<body>
+		<script>
+			/* 总结
+            1 类中的constructor不是必须写的，要对实例进行一些初始化的操作，如添加指定属性时，才写
+            2 如果A类中继承了B类，且A类中写了构造器，那么A类构造器中super() 是必须调用的
+            3 类中所定义的方法，都是放在了类的原型对象上，供实例使用
+            
+            */
+
+			class Person {
+				constructor(name, age) {
+					//构造器的this指类的实例对象
+					this.name = name;
+					this.age = age;
+				}
+				speak() {
+					//speak方法放在了类的原型对象上，供实例对象使用
+					//通过Person实例调用speak时，speak中的this就是Person实例
+					console.log(`My name is ${this.name} and I'm ${this.age} years old.`);
+				}
+			}
+			/* const p1 = new Person('anna', 45);
+			const p2 = new Person('gloria', 34);
+			console.log(p1);
+			console.log(p2);
+			p1.speak();
+			p2.speak(); */
+
+			class Student extends Person {
+				constructor(name, age, grade) {
+					super(name, age);
+					this.grade = grade;
+				}
+				speak() {
+					console.log(
+						`My name is ${this.name} and I'm ${this.age} years old. I'm in ${this.grade}.`
+					);
+				}
+				study() {
+					console.log('I study very hard.');
+				}
+			}
+			/* const s1 = new Student('popy', 12, 'Grade 7');
+			console.log(s1);
+			s1.speak();
+			s1.study(); */
+
+			//
+			class Car {
+				constructor(name, price) {
+					this.name = name;
+					this.price = price;
+					// this.wheel = 4;
+				}
+				//类中可以直接写赋值语句
+				//给Car的实例对象添加一个属性
+				wheel = 4;
+				static demo = 100;
+			}
+			Car.demo = 100;
+			const c1 = new Car('奔驰c63', 1999);
+			// const c2 = new Car('宝马', 2999);
+			console.log(c1);
+			// console.log(c2);
+			console.log(Car.demo);
+		</script>
+	</body>
+</html>
