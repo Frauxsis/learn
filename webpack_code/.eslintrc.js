@@ -11,4 +11,5 @@ module.exports = {
 	rules: {
 		'no-var': 2, //禁止使用var定义变量
 	},
+	plugins: ['import'], //解决动态导入语法
 };

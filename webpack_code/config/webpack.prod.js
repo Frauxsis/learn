@@ -6,9 +6,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const TerserWebpackPlugin = require('terser-webpack-plugin');
-const threads = os.cpus().length; //cpu核数
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
+const PreloadWebpackPlugin = require('preload-webpack-plugin');
+const WorkboxPlugin = require('workbox-webpack-plugin');
 
+const threads = os.cpus().length; //cpu核数
 //用来获取处理样式的loader
 function getStyleLoader(pre) {
 	return [
@@ -36,7 +38,11 @@ module.exports = {
 		//__dirname nodejs的变量，代表当前文件的文件夹目录
 		path: path.resolve(__dirname, '../dist'), //绝对路径
 		//入口文件打包输出的文件名
-		filename: 'static/js/main.js',
+		filename: 'static/js/[name].js',
+		//给打包输出的其她文件命名
+		chunkFilename: 'static/js/[name].chunk.js',
+		//图片、字体等通过 type:asset 处理资源命名方式
+		assetModuleFilename: 'static/media/[hash:10][ext][query]',
 		// 自动清空上次打包的内容
 		// 原理：在打包去，将path整个目录内容清空，再进行打包
 		clean: true,
@@ -66,20 +72,20 @@ module.exports = {
 								maxSize: 10 * 1024,
 							},
 						},
-						generator: {
-							//生成输出的图片名
-							// [hash:10] hash 值取前10位
-							filename: 'static/images/[hash:10][ext][query]',
-						},
+						// generator: {
+						// 	//生成输出的图片名
+						// 	// [hash:10] hash 值取前10位
+						// 	filename: 'static/images/[hash:10][ext][query]',
+						// },
 					},
 					{
 						test: /\.(ttf|woff2?|mp3|mp4|avi|)$/,
 						type: 'asset/resource',
-						generator: {
-							//生成输出的字体图标名
-							// [hash:10] hash 值取前10位
-							filename: 'static/media/[hash:10][ext][query]',
-						},
+						// generator: {
+						// 	//生成输出的字体图标名
+						// 	// [hash:10] hash 值取前10位
+						// 	// filename: 'static/media/[hash:10][ext][query]',
+						// },
 					},
 					{
 						test: /\.js$/,
@@ -126,12 +132,24 @@ module.exports = {
 			template: path.resolve(__dirname, '../public/index.html'),
 		}),
 		new MiniCssExtractPlugin({
-			filename: 'static/css/main.css',
+			filename: 'static/css/[name].css',
+			chunkFilename: 'static/css/[name].chunk.css',
 		}),
 		// new CssMinimizerPlugin(),
 		// new TerserWebpackPlugin({
 		// 	parallel: threads, // 开启多进程和进程数量
 		// }),
+		new PreloadWebpackPlugin({
+			// rel: 'preload',
+			// as: 'script',
+			rel: 'prefetch',
+		}),
+		new WorkboxPlugin.GenerateSW({
+			// these options encourage the ServiceWorkers to get in there fast
+			// and not allow any straggling "old" SWs to hang around
+			clientsClaim: true,
+			skipWaiting: true,
+		}),
 	],
 	optimization: {
 		//压缩的操作
@@ -171,6 +189,16 @@ module.exports = {
 				},
 			}),
 		],
+
+		//代码分割配置
+		splitChunks: {
+			chunks: 'all',
+			//其她都用默认值
+		},
+
+		runtimeChunk: {
+			name: (entrypoint) => `runtime~${entrypoint.name}.js`,
+		},
 	},
 	//模式
 	mode: 'production',

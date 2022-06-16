@@ -14,7 +14,11 @@ module.exports = {
 		//开发模式没有输出
 		path: undefined,
 		//入口文件打包输出的文件名
-		filename: 'static/js/main.js',
+		filename: 'static/js/[name].js',
+		//给打包输出的其她文件命名
+		chunkFilename: 'static/js/[name].chunk.js',
+		//图片、字体等通过 type:asset 处理资源命名方式
+		assetModuleFilename: 'static/media/[hash:10][ext][query]',
 	},
 	//加载器
 	module: {
@@ -51,20 +55,20 @@ module.exports = {
 								maxSize: 10 * 1024,
 							},
 						},
-						generator: {
-							//生成输出的图片名
-							// [hash:10] hash 值取前10位
-							filename: 'static/images/[hash:10][ext][query]',
-						},
+						// generator: {
+						// 	//生成输出的图片名
+						// 	// [hash:10] hash 值取前10位
+						// 	filename: 'static/images/[hash:10][ext][query]',
+						// },
 					},
 					{
 						test: /\.(ttf|woff2?|mp3|mp4|avi|)$/,
 						type: 'asset/resource',
-						generator: {
-							//生成输出的字体图标名
-							// [hash:10] hash 值取前10位
-							filename: 'static/media/[hash:10][ext][query]',
-						},
+						// generator: {
+						// 	//生成输出的字体图标名
+						// 	// [hash:10] hash 值取前10位
+						// 	filename: 'static/media/[hash:10][ext][query]',
+						// },
 					},
 					{
 						test: /\.js$/,
