@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>axios基本使用</title>
+		<script src="https://cdn.bootcdn.net/ajax/libs/axios/0.27.2/axios.min.js"></script>
+	</head>
+	<body>
+		<button onclick="testGet()">GET请求</button>
+		<button onclick="testPost()">POST请求</button>
+		<button onclick="testPut()">PUT请求</button>
+		<button onclick="testDelete()">DELETE请求</button>
+
+		<script>
+			//指定默认配置
+			axios.defaults.baseURL = 'http://localhost:3000';
+
+			function testGet() {
+				// axios.get('/posts?id=1')
+				axios({
+					url: '/posts',
+					params: { id: 1 },
+				}).then((response) => {
+					console.log('/posts  get', response.data);
+				});
+			}
+
+			function testPost() {
+				// axios.post('/posts', { title: 'json-server3', author: 'typicode3' })
+				axios({
+					url: '/posts',
+					method: 'post',
+					data: {
+						title: 'json-server4',
+						author: 'typicode4',
+					},
+				}).then((response) => {
+					console.log('/posts  post', response.data);
+				});
+			}
+
+			function testPut() {
+				// axios.put('/posts/4', { title: 'json-server...', author: 'typicode...' })
+				axios({
+					url: '/posts/4',
+					method: 'put',
+					data: { title: 'json-server5', author: 'typicode5' },
+				}).then((response) => {
+					console.log('/posts  put', response.data);
+				});
+			}
+
+			function testDelete() {
+				// axios.delete('http://localhost:3000/posts/4')
+				axios({
+					url: '/posts/5',
+					method: 'delete',
+				}).then((response) => {
+					console.log('/posts  delete', response.data);
+				});
+			}
+		</script>
+	</body>
+</html>
