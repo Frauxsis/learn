@@ -39,7 +39,7 @@
 						//取消请求的错误
 						console.log('请求取消的错误', error.message); //做相应处理
 						//中断promise连接
-						return new Promise((resolve, reject) => {});
+						return new Promise(() => {});
 					} else {
 						//	请求出错了
 						cancel = null;
