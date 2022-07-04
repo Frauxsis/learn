@@ -1,0 +1,30 @@
+import React, { useState } from 'react';
+import { Link, Outlet } from 'react-router-dom';
+
+export default function Message() {
+	const [messages] = useState([
+		{ id: '001', title: '消息1', content: 'hello world' },
+		{ id: '002', title: '消息2', content: 'hello react' },
+		{ id: '003', title: '消息3', content: 'hello future' },
+		{ id: '004', title: '消息4', content: 'hello js' },
+	]);
+	return (
+		<div>
+			<ul>
+				{messages.map((m) => {
+					return (
+						//路由链接
+						<li key={m.id}>
+							<Link to={`detail/${m.id}/${m.title}/${m.content}`}>
+								{m.title}
+							</Link>
+						</li>
+					);
+				})}
+			</ul>
+			<hr />
+			{/* 指定路由组件的展示位置 */}
+			<Outlet />
+		</div>
+	);
+}

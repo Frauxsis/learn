@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			class Person {
+				constructor(name, age) {
+					this.name = name;
+					this.age = age;
+				}
+				speak() {
+					//speak方法放在了类的原型对象上，供实例使用
+					//通过Person实例调用speak方法时，speak中的this就是Person实例
+					console.log(this);
+				}
+			}
+			const p1 = new Person('anna', 23);
+			p1.speak();
+			const x = p1.speak;
+			x(); //类里面开启了严格模式
+
+			function demo() {
+				'use strict'; //严格模式 this是undefined
+				console.log(this);
+			}
+			demo();
+		</script>
+	</body>
+</html>

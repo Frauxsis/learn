@@ -1,0 +1,9 @@
+.parent {
+	background-color: rgb(232, 177, 177);
+	padding: 10px;
+}
+.child {
+	background-color: rgb(232, 227, 177);
+	padding: 10px;
+	margin-top: 40px;
+}
