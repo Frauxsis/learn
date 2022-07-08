@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+        /*  先微后宏
+        宏：DOM,定时器，ajax
+        微：promise，mutation
+        
+        */
+         
+			setTimeout(() => {
+				//会立即放入宏队列
+				console.log('timeout callback1');
+				Promise.resolve(3).then((value) => {
+					//会立即放入微队列
+					console.log('Promise onResolved()', value);
+				});
+			}, 0);
+			setTimeout(() => {
+				//会立即放入宏队列
+				console.log('timeout callback2');
+			}, 0);
+			Promise.resolve(1).then((value) => {
+				//会立即放入微队列
+				console.log('Promise onResolved()1', value);
+			});
+			Promise.resolve(2).then((value) => {
+				//会立即放入微队列
+				console.log('Promise onResolved()2', value);
+			});
+		</script>
+	</body>
+</html>
