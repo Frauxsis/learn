@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script src="script/react.development.js"></script>
+		<script src="script/react-dom.development.js"></script>
+		<script src="script/babel.min.js"></script>
+	</head>
+	<body>
+		<div id="root"></div>
+		<script type="text/babel">
+			const data = ['angel', 'babara', 'cindy'];
+			const list = (
+				<ul>
+					{data.map((item) => (
+						<li key={item}>{item}</li>
+					))}
+				</ul>
+			);
+			const root = ReactDOM.createRoot(document.getElementById('root'));
+			root.render(list);
+
+			/* 虚拟DOM的好处
+				1 歼敌API复杂度
+				2 解决兼容问题
+				3 提升性能（减少DOM不必要操作）
+
+			每当调用root.render()，页面会重新渲染，react会通过diffing算法比较新旧元素，进行最小程度的改变
+			
+			当jsx中显示数组时，数组中每一个元素都需要设置一个唯一的key，否则控制台会出现警告
+			重新渲染页面时，react会根据顺序依次比较对应的元素，当渲染一个列表是不指定key，同样也会按照顺序进行比较
+			如果列表顺序永远不会发生变化，这么做没问题，如果列表顺序发生变化，可能会导致性能问题
+
+			在渲染一个列表时，通常会给列表项设置一个唯一的key，（这个key在当前列表中唯一即可）
+			
+			注：开发中一般会采用数据的id作为key，尽量不用元素的索引作为key(索引会变)
+
+			*/
+		</script>
+	</body>
+</html>

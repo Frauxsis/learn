@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			/* 
+         map()
+            可以根据原有数组返回一个新数组
+            需要一个回调函数作为参数回调函数的返回值会成为新数组中的元素
+               回调函数中有三个参数：
+               第一个元素：当前元素
+               第二个元素：当前元素的索引
+               第三个元素：当前数组
+
+         filter()
+            可以从一个数组中获得符合条件的元素
+            会根据回调函数的结果来决定是否保留元素，true保留，false不保留
+         
+         find()
+            可以从一个数组中获得符合条件的第一个元素
+
+         reduce()
+            可以用来合并数组中的元素
+            需要两个参数：
+               回调函数（指定运算规则）
+                  四个参数：
+                     prev 上一次运算结果
+                     current 当前值
+                     index 当前索引
+                     arr 当前数组
+               初始值
+                  用来指定第一次运算时的prev，如果不指定，则直接从第二个元素开始计算
+         */
+
+			const arr = [1, 2, 3, 4, 5];
+
+			// let result = arr.map(() => 10);
+			let result = arr.map((item, index, array) => item + 2);
+			console.log(result);
+
+			const arr2 = ['anna', 'baby', 'cindy'];
+			result = arr2.map((item) => '<li>' + item + '</li>');
+			console.log(result);
+
+			result = arr.filter((item) => item % 2 === 0);
+			result = arr.find((item) => item % 2 === 0);
+
+			result = arr.reduce((prev, current) => prev + current);
+			console.log(result);
+		</script>
+	</head>
+	<body></body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script src="script/react.development.js"></script>
+		<script src="script/react-dom.development.js"></script>
+		<script src="script/babel.min.js"></script>
+	</head>
+	<body>
+		<div id="root"></div>
+		<script type="text/babel">
+			/* 
+			在组件间，母组件可以通过props(属性)向女组件传递数据
+			在函数式组件中，props属性就相当于函数的参数，可以通过参数来访问
+				可以在函数组件的形参中定义一个props，props指向的是一个对象，她包含了母组件中传递的所有参数
+			props是只读的，不能修改
+			*/
+
+			const div = <div>这是个div</div>;
+			const root = ReactDOM.createRoot(document.getElementById('root'));
+			root.render(div);
+		</script>
+	</body>
+</html>

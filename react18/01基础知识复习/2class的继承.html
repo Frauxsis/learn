@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			/* 
+         
+         */
+		</script>
+	</head>
+	<body>
+		<script>
+			class Animal {
+				constructor(name, age) {
+					this.name = name;
+					this.age = age;
+				}
+				sayHello = () => {
+					console.log('wang');
+				};
+			}
+
+			class Dog extends Animal {}
+			const dog = new Dog('ddd', 12);
+			console.log(dog);
+			dog.sayHello();
+
+			class Snake extends Animal {
+				constructor(name, age, length) {
+					super(name, age);
+					this.length = length;
+				}
+			}
+			const snake = new Snake('sss', 11, 99);
+			console.log(snake);
+		</script>
+	</body>
+</html>

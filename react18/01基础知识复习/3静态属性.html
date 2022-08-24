@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			/* 
+          直接通过类调用的属性和方法被称为静态属性和静态方法(类属性/类方法)
+            就不需要new实例对象了
+
+         */
+
+			class MyClass {
+				static name = 'enda';
+				static fn = () => {
+               //注：静态方法this不是实例对象，而是当前的类对象---MyClass
+					console.log('hanshu',this);
+				};
+			}
+			console.log(MyClass.name);
+			MyClass.fn();
+		</script>
+	</head>
+	<body></body>
+</html>

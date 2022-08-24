@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script src="script/react.development.js"></script>
+		<script src="script/react-dom.development.js"></script>
+		<script src="script/babel.min.js"></script>
+	</head>
+	<body>
+		<div id="root"></div>
+		<script type="text/babel">
+			// 命令式编程
+			// const button = React.createElement('button', {}, '按钮');
+
+			//声明式编程，结果导向编程
+			//在React中，可以通过JSX来创建React元素，JSX需要被翻译为JS
+			//必须引入 babel 进行翻译
+         //jsx是React.createElement()语法糖
+			const button = <button> 按钮234</button>;
+			const root = ReactDOM.createRoot(document.getElementById('root'));
+			root.render(button);
+		</script>
+	</body>
+</html>

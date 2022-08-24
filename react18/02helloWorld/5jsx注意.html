@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script src="script/react.development.js"></script>
+		<script src="script/react-dom.development.js"></script>
+		<script src="script/babel.min.js"></script>
+	</head>
+	<body>
+		<div id="root"></div>
+		<script type="text/babel">
+			/* jsx注意事项
+			1 jsx不是字符串，不要加引号
+			2 jsx中html标签小写，组件首字母大写
+			3 jsx有且只有一个根标签
+			4 jsx中变迁必须正确结束（字节数标签必须写/）
+			5 在Jsx中，使用 {} 嵌入表达式
+				有值的语句就是表达式
+			6 如果表达式是空值，布尔值，NaN，undefined这些值，将不会显示
+			7 在jsx中，属性可以直接在标签中设置
+				class改为className
+				style必须使用对象设置
+			*/
+
+			const name = 'aaa';
+			const div = (
+				<div style={{ backgroundColor: 'grey' }}>
+					这是个div
+					<ul>
+						<li>liebiao</li>
+					</ul>
+					<input type="text" />
+					<div>{name}</div>
+				</div>
+			);
+			const root = ReactDOM.createRoot(document.getElementById('root'));
+			root.render(div);
+		</script>
+	</body>
+</html>

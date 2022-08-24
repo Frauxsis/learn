@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script src="script/react.development.js"></script>
+		<script src="script/react-dom.development.js"></script>
+		<script src="script/babel.min.js"></script>
+	</head>
+	<body>
+		<div id="root"></div>
+		<script type="text/babel">
+			const click = (event) => {
+				event.preventDefault(); //取消默认行为
+				event.stopPropagation(); //取消事件的冒泡
+				alert(546);
+				/* 在react中，无法通过return false取消行为
+            
+            事件对象
+               react中的事件对象不是原生的事件对象，是经过包装后的事件对象，
+               由于经过包装，所以使用过程中无需考虑兼容性问题
+            */
+			};
+
+			const button = <button onClick={click}>click me</button>;
+			const root = ReactDOM.createRoot(document.getElementById('root'));
+			root.render(button);
+		</script>
+	</body>
+</html>

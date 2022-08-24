@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script src="script/react.development.js"></script>
+		<script src="script/react-dom.development.js"></script>
+		<script src="script/babel.min.js"></script>
+	</head>
+	<body>
+		<div id="root"></div>
+		<script type="text/babel">
+			/* 
+			获取原生DOM对象
+				1 使用传统的document来对DOM进行操作
+				2 直接从react出获取DOM对象
+					步骤
+					1. 创建一个存储DOM对象的容器
+						使用useRef() 钩子函数
+						钩子函数的注意事项：
+							react钩子函数只能用于函数组件或自定义钩子
+							钩子函数只能直接在函数组件中使用
+
+						const h1Ref=useRef() //创建一个容器
+						h1Ref.current.innerHTML='xxx'
+						<div>
+							<h1 ref={h1Ref}>标题</h1>
+						</div>
+
+					2. 将容器设置为想要获取DOM对象元素的ref属性
+						react会自动将当前元素的DOM对象，设置为容器的current属性
+			
+				useRef()
+					返回的是一个普通的js对象	
+					{current:undefined}	
+					所以直接创建一个js对象，也可以代替useRef()
+					区别：
+						我们创建的对象，组件每次重新渲染都会创建一个新的对象
+						useRef()创建的对象可以确保每次渲染获取到的都是同一个对象
+					
+					当需要一个对象不会因为组件的重新渲染而改变时，就可以使用useRef()
+					
+			*/
+			const div = <div>这是个div</div>;
+			const root = ReactDOM.createRoot(document.getElementById('root'));
+			root.render(div);
+		</script>
+	</body>
+</html>
